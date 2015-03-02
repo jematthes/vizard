@@ -208,7 +208,22 @@ joint.shapes.bpmn.StepLink = joint.dia.Link.extend({
 
 });
 
-var paper = new joint.dia.Paper({
+joint.dia.VizPaper = joint.dia.Paper.extend({
+    events: {
+        'mousedown': 'pointerdown',
+        'dblclick': 'mousedblclick',
+        'click': 'mouseclick',
+        'touchstart': 'pointerdown',
+        'mousemove': 'pointermove',
+        'touchmove': 'pointermove',
+        'mouseover': 'mouseover'
+    },
+    mouseover: function() {
+        console.log(this)
+    }
+})
+
+var paper = new joint.dia.VizPaper({
     width: 4000,
     height: 1000,
     model: graph,

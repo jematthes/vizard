@@ -808,3 +808,12 @@ background-color: #F55923;
 * html .clearfix {
 	height: 1%;
 }
+
+.highlighted {
+  circle.outer {
+    stroke: black;
+  } 
+  path.user-img {
+    fill: black;
+  }
+}
