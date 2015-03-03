@@ -208,22 +208,7 @@ joint.shapes.bpmn.StepLink = joint.dia.Link.extend({
 
 });
 
-joint.dia.VizPaper = joint.dia.Paper.extend({
-    events: {
-        'mousedown': 'pointerdown',
-        'dblclick': 'mousedblclick',
-        'click': 'mouseclick',
-        'touchstart': 'pointerdown',
-        'mousemove': 'pointermove',
-        'touchmove': 'pointermove',
-        'mouseover': 'mouseover'
-    },
-    mouseover: function() {
-        console.log(this)
-    }
-})
-
-var paper = new joint.dia.VizPaper({
+var paper = new joint.dia.Paper({
     width: 4000,
     height: 1000,
     model: graph,
@@ -874,6 +859,28 @@ joint.shapes.bpmn.Step = joint.shapes.basic.Generic.extend({
 
 });
 
+joint.shapes.bpmn.StepView = joint.dia.ElementView.extend({
+    events: {
+        'mouseover': 'onMouseOver',
+        'mouseout': 'onMouseOut'
+    },
+
+    onMouseOver: function(evt) {
+        var the_halo = new joint.ui.Halo({ graph: graph, paper: paper, cellView: this });
+        the_halo.removeHandle('resize');
+        the_halo.removeHandle('remove');
+        the_halo.removeHandle('clone');
+        the_halo.removeHandle('link');
+        the_halo.removeHandle('fork');
+        the_halo.removeHandle('unlink');
+        the_halo.removeHandle('rotate');
+        the_halo.render();
+    },
+    onMouseOut: function() {
+        joint.ui.Halo.clear(paper);
+    }
+});
+
 joint.shapes.bpmn.External = joint.shapes.bpmn.Step.extend({
     defaults: joint.util.deepSupplement({
 
@@ -905,6 +912,9 @@ joint.shapes.bpmn.External = joint.shapes.bpmn.Step.extend({
         title: ''
 
     }, joint.shapes.basic.Generic.prototype.defaults),
+});
+
+joint.shapes.bpmn.ExternalView = joint.shapes.bpmn.StepView.extend({
 });
 
 joint.shapes.bpmn.Intervention = joint.shapes.bpmn.Step.extend({
@@ -940,10 +950,13 @@ joint.shapes.bpmn.Intervention = joint.shapes.bpmn.Step.extend({
     }, joint.shapes.basic.Generic.prototype.defaults),
 });
 
+joint.shapes.bpmn.InterventionView = joint.shapes.bpmn.StepView.extend({
+});
+
 joint.shapes.bpmn.Organization = joint.dia.Element.extend({
 
     markup: '<g class="rotatable"><g class="scalable"><circle class="body outer"/><circle class="body inner"/><path class="user-img" d="M18.7,9.3l9.1,3.6v1.2h-1.2c0,0.2-0.1,0.3-0.2,0.4c-0.1,0.1-0.3,0.2-0.5,0.2H11.5c-0.2,0-0.3-0.1-0.5-0.2c-0.1-0.1-0.2-0.3-0.2-0.4H9.6v-1.2L18.7,9.3z M27.2,24.5c0.2,0,0.3,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.4v1.2H9.6v-1.2c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.3-0.2,0.5-0.2H27.2z M12,15.4h2.4v7.3h1.2v-7.3h2.4v7.3h1.2v-7.3h2.4v7.3H23v-7.3h2.4v7.3h0.6c0.2,0,0.3,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.4v0.6H10.8v-0.6c0-0.2,0.1-0.3,0.2-0.4c0.1-0.1,0.3-0.2,0.5-0.2H12V15.4z"/><image /></g><text text-anchor="middle" class="user-label label"/></g>',
-
+    
     defaults: joint.util.deepSupplement({
 
         type: 'bpmn.Organization',
@@ -1075,7 +1088,10 @@ joint.shapes.bpmn.Organization = joint.dia.Element.extend({
         }
     }
 
-}).extend(joint.shapes.bpmn.IconInterface);;
+}).extend(joint.shapes.bpmn.IconInterface);
+
+joint.shapes.bpmn.OrganizationView = joint.shapes.bpmn.StepView.extend({
+});
 
 joint.shapes.bpmn.Person = joint.shapes.bpmn.Organization.extend({
 
@@ -1389,6 +1405,10 @@ joint.shapes.bpmn.Person = joint.shapes.bpmn.Organization.extend({
 
 }).extend(joint.shapes.bpmn.IconInterface);
 
+joint.shapes.bpmn.PersonView = joint.shapes.bpmn.StepView.extend({
+
+});
+
 joint.shapes.bpmn.MorePersons = joint.dia.Element.extend({
 
     markup: '<g class="rotatable"><g class="scalable"><circle class="body outer"/><circle class="body inner"/></g><text text-anchor="middle" class="user-label label"/></g>',
@@ -1439,7 +1459,7 @@ joint.shapes.bpmn.MorePersons = joint.dia.Element.extend({
         joint.dia.Element.prototype.initialize.apply(this, arguments);
     }
 
-}).extend(joint.shapes.bpmn.IconInterface);;
+}).extend(joint.shapes.bpmn.IconInterface);
 
 joint.shapes.bpmn.GroupOrganization = joint.dia.Element.extend({
 
