@@ -376,12 +376,12 @@ stencil.render().$el.appendTo('#stencil-container');
 joint.ui.VizHalo = joint.ui.Halo.extend({
 
     options: {
-    tinyTreshold: 40,
-    smallTreshold: 50,
-    mediumTreshold: 80,
-    loopLinkPreferredSide: 'top',
-    loopLinkWidth: 40,
-    rotateAngleGrid: 15,
+        tinyTreshold: 40,
+        smallTreshold: 50,
+        mediumTreshold: 80,
+        loopLinkPreferredSide: 'top',
+        loopLinkWidth: 40,
+        rotateAngleGrid: 15,
         useModelGeometry: false,
         // a function returning a html string, which will be used as the halo box content
         boxContent: function(cellView, boxElement) {
@@ -400,8 +400,8 @@ joint.ui.VizHalo = joint.ui.Halo.extend({
 
         },
         // deprecated (better use joint.dia.Paper.options.linkModel)
-    linkAttributes: {},
-    smoothLinks: undefined,
+        linkAttributes: {},
+        smoothLinks: undefined,
         handles: [
             { name: 'resize', position: 'se', events: { pointerdown: 'startResizing', pointermove: 'doResize', pointerup: 'stopBatch' } },
             { name: 'remove', position: 'nw', events: { pointerdown: 'removeElement' } },
@@ -457,16 +457,16 @@ joint.ui.VizHalo = joint.ui.Halo.extend({
 
         this.$el.css({
 
-        width: bbox.width,
-        height: bbox.height,
-        left: bbox.x,
-        top: bbox.y
+            width: bbox.width,
+            height: bbox.height,
+            left: bbox.x,
+            top: bbox.y
 
-    }).show();
+        }).show();
 
-    this.updateMagnets();
+        this.updateMagnets();
 
-    this.toggleUnlink();
+        this.toggleUnlink();
     },
 
     startForking: function(evt) {
@@ -527,7 +527,6 @@ joint.ui.VizHalo = joint.ui.Halo.extend({
         this.options.cellView.model.remove();
         toolbar.saveGraph()
     },
-}, {
 
     // removes a halo from a paper
     clear: function(paper) {
@@ -535,6 +534,12 @@ joint.ui.VizHalo = joint.ui.Halo.extend({
         paper.trigger('halo:create');
     }
 });
+
+// HoverHalo
+
+joint.ui.HoverHalo = joint.ui.VizHalo.extend({
+    className: 'hoverHalo'
+})
 
 // Icons
 
@@ -866,7 +871,7 @@ joint.shapes.bpmn.StepView = joint.dia.ElementView.extend({
     },
 
     onMouseOver: function(evt) {
-        var the_halo = new joint.ui.Halo({ graph: graph, paper: paper, cellView: this });
+        var the_halo = new joint.ui.HoverHalo({ graph: graph, paper: paper, cellView: this });
         the_halo.removeHandle('resize');
         the_halo.removeHandle('remove');
         the_halo.removeHandle('clone');
@@ -877,7 +882,7 @@ joint.shapes.bpmn.StepView = joint.dia.ElementView.extend({
         the_halo.render();
     },
     onMouseOut: function() {
-        joint.ui.Halo.clear(paper);
+        joint.ui.HoverHalo.clear(paper);
     }
 });
 
