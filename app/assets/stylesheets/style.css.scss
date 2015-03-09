@@ -564,7 +564,6 @@ background-color: #F55923;
   display: none;
   font-size: 40px;
   text-transform: uppercase;
-  background: #1fa67a;
   color: #fff;
   /*width: 100%;*/
   position: absolute;
@@ -577,13 +576,20 @@ background-color: #F55923;
   width: 300px;
   margin: 1em 40%;
 }
+.alertSuccess {
+  background: #1fa67a;
+}
+
+.alertError {
+  background: #ff0000;
+}
 
 #sidebar-left  .alertSuccess {
   color: #50E3C2;
 }
 
 #sidebar-left  .alertError {
-  color: #ff0000;
+  color: #F58D23;
 }
 
 /*Tooltip*/
