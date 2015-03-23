@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Wizard" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Vizard Rails" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <% if( user_signed_in? ) %>
-          <a class="company-logo" href="/">Wizard</a><span class="tagline">beta</span>
-          <ul class="nav navbar-nav">
-            <li><a href="/sandboxes">Sandboxes</a></li>
-            <li><a href="#">Templates</a></li>
-            <li><a href="#">Tutorials</a></li>
-          </ul>
-          <ul class="nav navbar-right top-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome, <%= current_user.email %> <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a href="/users/edit">My Account</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <% else %>
-          <div class="pt15">
-          <a class="company-logo" href="#">Wizard</a><span class="tagline">beta</span></div>
-            <div class="nav pull-right">
-              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              Sign in <span class="caret"></span>
-              </button>
-                <ul class="dropdown-menu" style="padding: 15px; right: 0; left: initial;" role="menu">
-                  <%= render 'layouts/signin' %>
-                </ul>
-                <!-- this prevent close the dropdown menu http://stackoverflow.com/a/16050828 -->
-                <script type="text/javascript">
-                  $('.dropdown-menu input').click(function(e) {
-                      e.stopPropagation();
-                  });
-                </script>
-          </div>
-      </div>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= content_for?(:title) ? yield(:title) : "Wizard" %></title>
+        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Vizard Rails" %>">
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <a class="company-logo" href="/">Wizard</a><span class="tagline">beta</span>
+
+                    <% if( user_signed_in? ) %>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/sandboxes">Sandboxes</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                    </ul>
+                    <ul class="nav navbar-right top-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome, <%= current_user.email %> <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/users/edit">My Account</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <% else %>
+                    <div class="nav pull-right">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            Sign in <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="padding: 15px; right: 0; left: initial;" role="menu">
+                            <%= render 'layouts/signin' %>
+                        </ul>
+                        <!-- this prevent close the dropdown menu http://stackoverflow.com/a/16050828 -->
+                        <script type="text/javascript">
+                        $('.dropdown-menu input').click(function(e) {
+                            e.stopPropagation();
+                        });
+                        </script>
+                    </div>
+                    <% end %>
+                </div>
+
+                <div class="container">
+                    <div class="clearfix toolbarName">
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <%= yield :top %>
+        <div role="main" class="container FullPage">
+            <%= yield %>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="mtb40">
+                        <div class="col-md-8">
+                            <h3 class="mb20">Developed by</h3>
+                            <a href="//www.unicef.org/" target="_blank" alt="UNICEF"><%= image_tag "UNICEF.png" %></a><a href="//ciudadanointeligente.org/" target="_blank" alt="Fundación Ciudadano Inteligente"><%= image_tag "FCI.png" %></a>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="mb20">Contact</h3>
+                            <ul class="list-unstyled">
+                              <li><i class="fa fa-phone"></i> +56 2 2419 2770</li>
+                              <li><i class="fa fa-envelope"></i> <a href="#">Contacto Prensa</a></li>
+                              <li><i class="fa fa-map-marker"></i>Holanda 895, Providencia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-      </div>
-      <!--/.nav-collapse -->
-          <% end %>
-          <div class="container">
-              <div class="clearfix toolbarName">
-              </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-<%= yield :top %>
-    <div role="main" class="container FullPage">
-      <%= yield %>
-    </div>
-    <footer>
-      <div class="row">
-        <div class="container mtb40">
-          <div class="col-md-8">
-            <h3 class="mb20">Developed by</h3>
-            <a href="//www.unicef.org/" target="_blank" alt="UNICEF Website"><%= image_tag "UNICEF.png" %></a><a href="//ciudadanointeligente.org/" target="_blank" alt="Fundación Ciudadano Inteligente Website"><%= image_tag "FCI.png" %></a> 
-          </div>
-          <div class="col-md-4">
-            <h3 class="mb20">Contact</h3>
-            <p><i class="fa fa-phone"></i> +56 2 2419 2770</p>
-            <p><i class="fa fa-envelope"></i> <a href="#">Contacto Prensa</a></p>
-            <p><i class="fa fa-map-marker"></i>Holanda 895, Providencia</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
+        </footer>
+    </body>
 </html>
