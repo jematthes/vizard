@@ -25,9 +25,9 @@
             <th>Project</th>
             <th>Description</th>
             
-            <th class="text-center">Public</th>
+            <th class="no-sort text-center">Public</th>
             <th>Last update</th>
-            <th>Actions</th>
+            <th class="text-right no-sort">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -85,13 +85,25 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-    $('#private_projects').DataTable({
-        "dom": '<"toolbar">frtip',
-        "pagingType": "simple_numbers"
+    $('#private_projects').dataTable( {
+    "dom": '<"toolbar">frtip',
+    "pagingType": "simple_numbers",
+    "order": [],
+    "columnDefs": [ {
+      "targets"  : 'no-sort',
+      "orderable": false,
+    }]
     } );
     $('#public_projects').DataTable({
-        "dom": '<"toolbar">frtip'
+        "dom": '<"toolbar">frtip',
+    "pagingType": "simple_numbers",
+    "order": [],
+    "columnDefs": [ {
+      "targets"  : 'no-sort',
+      "orderable": false,
+    }]
     } );
 });
+
 
 </script>

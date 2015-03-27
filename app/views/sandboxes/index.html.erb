@@ -18,15 +18,15 @@
 
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="private">
-      <table id="private_sandboxes" class="table table-striped">
+      <table id="private_sandboxes" class="table table-striped table-bordered">
         <thead>
           <tr>
             <th>id</th>
             <th>Name</th>
             <th>Description</th>
+            <th class="text-center no-sort">Public</th>
             <th>Last update</th>
-            <th class="text-center">Public</th>
-            <th class="text-right">Actions</th>
+            <th class="text-right no-sort">Actions</th>
           </tr>
         </thead>
 
@@ -41,12 +41,12 @@
                   <% end %>
                 </td>
                 <td><%= sandbox.description %></td>
-                <td><%= sandbox.updated_at %></td>
                 <td class="text-center">
                   <% if(sandbox.public?) %>
                     <i class="fa fa-globe" title="Public"></i>
                   <% end %>
                 </td>
+                <td><%= sandbox.updated_at %></td>
                 <td class="text-right actions">
                   <%= link_to sandbox do %>
                     <i class="fa fa-edit" title="Edit"></i>
@@ -73,7 +73,7 @@
     </div>
 
     <div role="tabpanel" class="tab-pane" id="public">
-      <table id="public_sandboxes" class="table table-striped">
+      <table id="public_sandboxes" class="table table-striped table-bordered">
         <thead>
           <tr>
             <th>id</th>
@@ -105,12 +105,23 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-    $('#private_sandboxes').DataTable({
-        "dom": '<"toolbar">frtip',
-        "pagingType": "simple_numbers"
+    $('#private_sandboxes').dataTable( {
+    "dom": '<"toolbar">frtip',
+    "pagingType": "simple_numbers",
+    "order": [],
+    "columnDefs": [ {
+      "targets"  : 'no-sort',
+      "orderable": false,
+    }]
     } );
     $('#public_sandboxes').DataTable({
-        "dom": '<"toolbar">frtip'
+        "dom": '<"toolbar">frtip',
+    "pagingType": "simple_numbers",
+    "order": [],
+    "columnDefs": [ {
+      "targets"  : 'no-sort',
+      "orderable": false,
+    }]
     } );
 });
 
