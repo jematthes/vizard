@@ -13,6 +13,10 @@
       </label>
     </div>
 
+    <%= f.simple_fields_for :resources do |r| %>
+    	<%= r.input :title %>
+    <% end %>
+
     <div class="form-actions">
         <%= f.button :submit %>
     </div>

@@ -1,5 +1,6 @@
-<%= simple_form_for(@resource) do |f| %>
+<%= simple_form_for [@project,@resource] do |f| %>
   <%= f.error_notification %>
+  <%= f.input :title %>
 
   <div class="form-inputs">
   </div>

@@ -13,6 +13,7 @@ class ResourcesController < ApplicationController
   end
 
   def new
+    @project = Project.find(params[:project_id])
     @resource = Resource.new
     respond_with(@resource)
   end
