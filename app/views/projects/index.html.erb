@@ -22,7 +22,7 @@
         <thead>
           <tr>
             <th>id</th>
-            <th>Name</th>
+            <th>Project</th>
             <th>Description</th>
             
             <th class="no-sort text-center">Public</th>
@@ -34,20 +34,26 @@
             <% @projects.each do | p | %>
             <tr>
                 <td><%= p.id %></td>
-                <td><a href="#"><%= p.title %></a></td>
+                <td>
+                  <%= link_to p do %>
+                    <%= p.title %></a>
+                  <% end %>
+                </td>
+
                 <td><%= p.description %></td>
                 <td class="text-center">
+                  <% if(p.public?) %>
                     <i class="fa fa-globe" title="Public"></i>
+                  <% end %>
                 </td>
                 <td><%= p.updated_at %></td>
                 <td class="text-right actions">
                   <%= link_to edit_project_path(p) do %>
                       <i class="fa fa-edit" title="Edit"></i>
                   <% end %>
-                    <a href="#"><i class="fa fa-home" title="Vist Home"></i></a>
-
-                    <a href="#"><i class="fa fa-copy" title="Clone"></i></a>
-                    <a href="#"><i class="fa fa-trash" title="Delete"></i></a>
+                  <%= link_to p, method: :delete, data: { confirm: 'Are you sure you want to permanently delete this project?' } do %>
+                    <i class="fa fa-trash" title="Delete"></i>
+                  <% end %>
                 </td>
             </tr>
             <% end %>
