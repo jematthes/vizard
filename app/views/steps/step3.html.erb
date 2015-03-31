@@ -97,7 +97,7 @@ $('#myTab a').click(function (e) {
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12">
-                <h3>Step 2 - List actors and Power map</h3>
+                <h3>Step 2 - List Actors and Power Map</h3>
                 <p>Identify stakeholders and plot them over a grid as to where do they stand in terms of influence and support</p>
                 <div class="form-group">
                     <div role="tabpanel">
@@ -138,10 +138,10 @@ $('#myTab a').click(function (e) {
                                                 <input type="text" class="form-control" required="required" id="name" placeholder="Enter name">
                                             </div>
                                             <div class="form-group">
-                                                <label for="support-level">Support Level (0 a 5)</label>
+                                                <label for="support-level">Support Level (1 a 5)</label>
                                                 <select class="form-control" id="support-level">
                                                   <option>Select Support level</option>
-                                                  <option>1 - None</option>
+                                                  <option>1 - Actively Contrary</option>
                                                   <option>2</option>
                                                   <option>3 - Neutral</option>
                                                   <option>4</option>
@@ -149,7 +149,7 @@ $('#myTab a').click(function (e) {
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label for="influence-level">Influence Level (0 a 5)</label>
+                                                <label for="influence-level">Influence Level (1 a 5)</label>
                                                 <select class="form-control" id="influence-level">
                                                   <option>Select Influence level</option>
                                                   <option>1 - No influences</option>
@@ -177,102 +177,61 @@ $('#myTab a').click(function (e) {
                                               </thead>
                                               <tbody>
                                                 <tr>
-                                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td></td>
+                                                  <td>Person</td>
+                                                  <td>José Garrido</td>
+                                                  <td>Neutral</td>
+                                                  <td>Influential</td>
                                                   <td class="text-right actions">
                                                         <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td></td>
-                                                  <td class="text-right actions">
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row setup-content" id="step-4">
-        <div class="col-xs-12">
-            <div class="col-md-12">
-                <h3>Step 4 - Bottlenecks</h3>
-                <p>Identify the key bottlenecks standing in the way of these solutions being implemented or being effective</p>
-                <div class="form-group">
-                    <div role="tabpanel">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#explication4" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
-                            <li role="presentation"><a href="#data-entry4" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
-                        </ul>
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="explication4">
-                                    <h4>Description</h4>
-                                    <p>A change in policies may be hampered by a number of factors at the country or global level, such as lack of resources, absence of robust evidence or lack of support by local citizens, etc.</p>
-                                    <hr>
-                                    <h4>Example</h4>
-                                    <ul>
-                                        <li>Limited fiscal space (conditions agreed with IMF/EU, flawed tax collection capacity, etc)</li>
-                                        <li>Low awareness within the President Cabinet about the problem</li>
-                                        <li>Low priority in the agenda of the Ministry of Social Affairs</li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="data-entry4">
-                                    <div class=row>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="policy-solution-bottlenecks">Policy Solution</label>
-                                                <select class="form-control" id="policy-solution-bottlenecks">
-                                                  <option>Select policy solution</option>
-                                                  <option>Policy Solution 1</option>
-                                                  <option>Policy Solution 2</option>
-                                                </select>
-                                            </div>
-                                            <hr>
-                                            <div class="form-group">
-                                                <label for="bottlenecks">Bottleneck</label>
-                                                <input type="text" class="form-control" required="required" id="bottlenecks" placeholder="Enter Bottleneck">
-                                            </div>
-                                            <button class="btn btn-default" type="button" ><i class="fa fa-plus-square-o"></i> Add Bottlenecks</button>
-                                            <hr>
-                                            <table class="table table-bordered">
-                                              <thead>
-                                                <tr>
-                                                  <th>Bottlenecks</th>
-                                                  <th>Actions</th>
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                <tr>
-                                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
+                                                  <td>Organization</td>
+                                                  <td>Marcel Augsburger</td>
+                                                  <td>Actively Contrary</td>
+                                                  <td>Influential</td>
                                                   <td class="text-right actions">
                                                         <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
+                                                  <td>Person</td>
+                                                  <td>José Garrido</td>
+                                                  <td>Neutral</td>
+                                                  <td>Influential</td>
+                                                  <td class="text-right actions">
+                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Organization</td>
+                                                  <td>Marcel Augsburger</td>
+                                                  <td>Actively Contrary</td>
+                                                  <td>Influential</td>
+                                                  <td class="text-right actions">
+                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Person</td>
+                                                  <td>José Garrido</td>
+                                                  <td>Neutral</td>
+                                                  <td>Influential</td>
+                                                  <td class="text-right actions">
+                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>Organization</td>
+                                                  <td>Marcel Augsburger</td>
+                                                  <td>Actively Contrary</td>
+                                                  <td>Influential</td>
                                                   <td class="text-right actions">
                                                         <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                   </td>
                                                 </tr>
                                               </tbody>
                                             </table>
-                                            <button class="btn btn-success" type="button" >Save</button> 
-                                            <button class="btn btn-success nextBtn" type="button" >Save & Finish</button>
-                                        </div>
-                                        <div class="col-md-6">
-
                                         </div>
                                     </div>
                                 </div>
