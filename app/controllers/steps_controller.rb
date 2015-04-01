@@ -3,4 +3,6 @@ class StepsController < ApplicationController
   end
   def step1
   end
+  def step4
+  end
 end
