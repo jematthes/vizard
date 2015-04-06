@@ -1,19 +1,52 @@
 <h3>Interim Outcome</h3>
 <p>INGO and UNICEF strengthen their collaboration and jointly advocate the National Assembly and the Government to reform the policy framework on HI in order to cover informal workers and their families</p>
 <hr>
-<div class="row">
-	<div class="col-md-3">
-		<p><strong>Interim Outcome Type</strong></p>
-		<p>Partnerships or alliances</p>
-	</div>
-	<div class="col-md-3">
-		<p><strong>Actor Type</strong></p>
-		<p>Active supporters with low influence</p>
-	</div>
-	<div class="col-md-6 text-right">
-		<button class="btn btn-default" type="button" ><i class="fa fa-pencil-square-o"></i> Edit Interim Outcome</button>
-	</div>
-</div>
+<div class=row>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="interim-outcome">Interim Outcome</label>
+            <textarea class="form-control" rows="5" id="interim-outcome">INGO and UNICEF strengthen their collaboration and jointly advocate the National Assembly and the Government to reform the policy framework on HI in order to cover informal workers and their families</textarea>
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+            <label for="interim-outcome-type">Interim Outcome Type</label>
+            <select class="form-control" id="interim-outcome-type">
+              <option>Select Interim Outcome Type</option>
+              <option>Political will</option>
+              <option>Public will</option>
+              <option>Attitudes or beliefs</option>
+              <option>Salience</option>
+              <option>Awareness</option>
+              <option>New champions</option>
+              <option>New advocates </option>
+              <option selected>Partnerships or alliances</option>
+              <option>Constituency or support-base growth</option>
+              <option>Media coverage</option>
+              <option>Issue reframing</option>
+              <option>Organizational advocacy capacity</option>
+              <option>Organizational visibility or issue recognition</option>
+              <option>Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="actor-type">Actor Type</label>
+            <select class="form-control" id="actor-type">
+              <option>Select Actor Type</option>
+              <option>Active opponents with influence</option>
+              <option>Active opponents with low influence</option>
+              <option>Passive opponents with influence</option>
+              <option>Passive opponents with low influence</option>
+              <option>Neutrals with influence</option>
+              <option>Neutrals with low influence</option>
+              <option>Passive supporters with influence</option>
+              <option>Passive supporters with low influence</option>
+              <option>Active supporters with influence</option>
+              <option selected>Active supporters with low influence</option>
+            </select>
+        </div>
+    </div>
+  </div>
 <hr>
 <div class="row">
 	<div class="col-md-12">
@@ -58,7 +91,7 @@
 </div>
 <div class="row">
 	<div class="col-md-12">
-	  <table class="table table-bordered">
+	  <table class="table table-bordered" id="activities">
 	      <thead>
 	        <tr>
 	          <th>Activity</th>
