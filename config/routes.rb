@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'steps/index'
   get 'steps/step1'
   get 'steps/step2'
+  get 'steps/step2_1'
   resources :projects
 
   resources :resources
