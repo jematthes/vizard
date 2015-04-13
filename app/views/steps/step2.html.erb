@@ -33,95 +33,241 @@ $('#myTab a').click(function (e) {
   </div>
   <div role="tabpanel" class="tab-pane" id="data-entry">
     <div class="row">
-      <div class="col-md-6">
-        <form>
-      	  <div class="form-group">
-            <label for="solution">Select Solution</label>
-            <select class="form-control" id="solution">
-              <option>Select Solution</option>
-              <option>Solution 1</option>
-              <option>Solution 2</option>
-              <option>Solution 3</option>
-              <option>Solution 4</option>
-              <option>Solution 5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="objetive">Objetive</label>
-            <textarea class="form-control" rows="3" id="objetive" placeholder="Write Objetive"></textarea>
-          </div>
-          <div class="form-group">
-      	    <label for="key-contribution">Key Contribution</label>
-      	    <input type="text" class="form-control" id="key-contribution" placeholder="Enter number 1 to 3">
-      	  </div>
-          <div class="form-group">
-            <label for="momentum">Momentum</label>
-            <input type="text" class="form-control" id="momentum" placeholder="Enter number 1 to 3">
-          </div>
-          <div class="form-group">
-            <label for="comparative-adventage">Comparative Adventage</label>
-            <input type="text" class="form-control" id="comparative-adventage" placeholder="Enter number 1 to 3">
-          </div>
-          <button class="btn btn-default" type="button" ><i class="fa fa-plus-square-o"></i> Add Objetive</button>
-          <hr>
-          <button class="btn btn-success" type="button">Save</button> 
-      	  <button class="btn btn-success" type="button">Save & Finish</button>
-    	 </form>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam urna ante, hendrerit non enim non, convallis suscipit ante. Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec viverra, sem fermentum egestas tincidunt, neque sapien pharetra leo, id sodales odio velit a enim. Aenean tempor iaculis diam</div>
+          <div class="col-md-2"><button class="btn btn-default pull-right" type="button" ><i class="fa fa-plus-square-o"></i> Add Objetive</button></div>
+        </div>
+        <hr>
       </div>
-      <div class="col-md-6">
-        <h4>Solution 1</h4>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Objetives</th>
-              <th>Total</th>
-              <th>Prioritized</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
-              <td class="text-center">9</td>
-              <td class="text-center">
-                    <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
-              </td>
-              <td class="text-right actions">
-                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
-              <td class="text-center">6</td>
-              <td class="text-center">
-                    <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
-              </td>
-              <td class="text-right actions">
-                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
-              <td class="text-center">5</td>
-              <td class="text-center">
-                    <a href="#"><i class="fa fa-times" title="Postpone"></i></a>
-              </td>
-              <td class="text-right actions">
-                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed metus ipsum, condimentum vitae varius non</td>
-              <td class="text-center">3</td>
-              <td class="text-center">
-                    <a href="#"><i class="fa fa-times" title="Postpone"></i></a>
-              </td>
-              <td class="text-right actions">
-                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" href="#solution1" aria-expanded="false" aria-controls="collapseExample">Solution 1</a></h4>  
+          </div>      
+          <div class="collapse steps in" id="solution1">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Objetives</th>
+                  <th>Subtotal Key Contribution</th>
+                  <th>Subtotal Momentum</th>
+                  <th>Subtotal Comparative Advantage</th>
+                  <th>Total</th>
+                  <th>Prioritized</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>By the end of 2018, the Government revises the National HIV Strategy and includes women at risk among targeted and PMTCT among critical strategies</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">9</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, the National Assembly/Government revises the Health Insurance policy framework to expand coverage to disadvantaged informal workers and their families and to include PMTCT in the benefit package</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, donors raise their external assistance to PMTCT</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-square" title="Postpone"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, the National Assembly amends the Penal Code to remove detention among the list of sanctions for sex workers</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-square" title="Postpone"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" href="#solution2" aria-expanded="false" aria-controls="collapseExample">Solution 2</a></h4>  
+          </div>      
+          <div class="collapse steps in" id="solution2">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Objetives</th>
+                  <th>Subtotal Key Contribution</th>
+                  <th>Subtotal Momentum</th>
+                  <th>Subtotal Comparative Advantage</th>
+                  <th>Total</th>
+                  <th>Prioritized</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>By the end of 2018, the Government revises the National HIV Strategy and includes women at risk among targeted and PMTCT among critical strategies</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">9</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, the National Assembly/Government revises the Health Insurance policy framework to expand coverage to disadvantaged informal workers and their families and to include PMTCT in the benefit package</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, donors raise their external assistance to PMTCT</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-square" title="Postpone"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, the National Assembly amends the Penal Code to remove detention among the list of sanctions for sex workers</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-square" title="Postpone"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title"><a data-toggle="collapse" href="#solution3" aria-expanded="false" aria-controls="collapseExample">Solution 3</a></h4>  
+          </div>      
+          <div class="collapse steps in" id="solution3">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Objetives</th>
+                  <th>Subtotal Key Contribution</th>
+                  <th>Subtotal Momentum</th>
+                  <th>Subtotal Comparative Advantage</th>
+                  <th>Total</th>
+                  <th>Prioritized</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>By the end of 2018, the Government revises the National HIV Strategy and includes women at risk among targeted and PMTCT among critical strategies</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">9</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, the National Assembly/Government revises the Health Insurance policy framework to expand coverage to disadvantaged informal workers and their families and to include PMTCT in the benefit package</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">6</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-check-square" title="Priority"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, donors raise their external assistance to PMTCT</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center">5</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-square" title="Postpone"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>By the end of 2018, the National Assembly amends the Penal Code to remove detention among the list of sanctions for sex workers</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">3</td>
+                  <td class="text-center">
+                        <a href="#"><i class="fa fa-square" title="Postpone"></i></a>
+                  </td>
+                  <td class="text-right actions">
+                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a> <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <hr>
+          <button class="btn btn-success" type="button">Save</button> 
+          <button class="btn btn-success" type="button">Save & Finish</button>
       </div>
     </div>
   </div>
