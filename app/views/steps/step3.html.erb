@@ -58,6 +58,10 @@ $('#myTab a').click(function (e) {
             <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
             <p>Step 2 - List actors and Power map</p>
         </div>
+        <div class="stepwizard-step">
+            <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+            <p>Step 3 - Identify (additional) enabling factors and barriers</p>
+        </div>
     </div>
 </div>
 <form role="form">
@@ -98,7 +102,7 @@ $('#myTab a').click(function (e) {
                                     <hr>
                                     <p>Draws the Decision-Making Cycles to help visualize it.</p>
                                     <button class="btn btn-default" type="button" ><i class="fa fa-external-link"></i> Draw in Sandbox</button>
-<button class="btn btn-default" type="button" ><i class="fa fa-download"></i> Download Example Drawing</button>
+        <button class="btn btn-default" type="button" ><i class="fa fa-download"></i> Download Example Drawing</button>
                                     <hr>
                                     <button class="btn btn-success" type="button" >Save</button>
                                     <button class="btn btn-success nextBtn" type="button" >Save & Next</button>
@@ -215,7 +219,7 @@ $('#myTab a').click(function (e) {
                                             </div>
                                             <div class="form-group">
                                                 <label for="name">Name</label>
-                                                <input type="text" class="form-control" required="required" id="name" placeholder="Enter name">
+                                                <input type="text" class="form-control" id="name" placeholder="Enter name">
                                             </div>
                                             <div class="form-group">
                                                 <label for="support-level">Support</label>
@@ -258,7 +262,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -268,7 +272,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Very Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -277,7 +281,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Significant Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -286,7 +290,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Moderate Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -305,7 +309,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -315,7 +319,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Very Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -324,7 +328,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Significant Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -333,7 +337,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Moderate Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -352,7 +356,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -362,7 +366,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -371,7 +375,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -380,7 +384,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -399,7 +403,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -409,7 +413,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Very Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -418,7 +422,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Significant Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -427,7 +431,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Moderate Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -446,7 +450,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -456,7 +460,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Very Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -465,7 +469,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Significant Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -474,7 +478,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Moderate Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -493,7 +497,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -503,7 +507,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Very Influential</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -512,7 +516,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Significant Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -521,7 +525,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Moderate Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -540,7 +544,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -550,7 +554,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -559,7 +563,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -568,7 +572,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -587,7 +591,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -597,7 +601,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -606,7 +610,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -615,7 +619,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -634,7 +638,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -644,7 +648,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -653,7 +657,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -662,7 +666,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>Low Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -681,7 +685,7 @@ $('#myTab a').click(function (e) {
                                                           <th>Actor Type</th>
                                                           <th>Name</th>
                                                           <th>Influence</th>
-                                                          <th>Actions</th>
+                                                          <th class="text-right">Actions</th>
                                                     </tr>
                                                   </thead>
                                                   <tbody>
@@ -691,7 +695,7 @@ $('#myTab a').click(function (e) {
                                                       <td>José Garrido</td>
                                                       <td>No Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -700,7 +704,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Party XX</td>
                                                       <td>No Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                     <tr>
@@ -709,7 +713,7 @@ $('#myTab a').click(function (e) {
                                                       <td>Marcel Augsburger</td>
                                                       <td>No Influence</td>
                                                       <td class="text-right actions">
-                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
                                                       </td>
                                                     </tr>
                                                   </tbody>
@@ -723,6 +727,99 @@ $('#myTab a').click(function (e) {
                                             <button class="btn btn-success nextBtn" type="button" >Save & Next</button>
                                         </div>
                                     </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <h3>Step 3 - Identify (additional) enabling factors and barriers</h3>
+                <p>Write enabling factors and barriers</p>
+                <div class="form-group">
+                    <div role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#explication3" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
+                            <li role="presentation"><a href="#data-entry3" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+                        </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="explication3">
+                                    <h4>Description</h4>
+                                    <p>Through the prioritization criteria table (step 2.2), the actor mapping (step 3.1) and the decision-making cycle analysis (3.2) you will have already identified some enabling factors and barriers to achieve your policy objective.</p>
+                                    <p>This step gives you the opportunity to consolidate this information and go deeper in the analysis of the context surrounding the specific policy change that you want to pursue.</p> 
+                                    <p>It consists on the identification of additional relevant enabling factors and barriers bearing in mind a broad range of elements: financial, social, technological, evidence, political, religious, cultural, geographical, within the organization, etc.</p> 
+
+                                    <hr>
+                                    <h4>Example</h4>
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Enabling factors</th>
+                                            <th>Barriers </th>
+                                        </tr>
+                                        <tr>
+                                            <td>Expanding coverage was already discussed in previous reform and awareness was raised among some of the current NA members</td>
+                                            <td>Limited human resources in the organization (UNICEF policy advisor will take paternal leave for two months)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Increasing support in decision-making circles to expand protection of disadvantaged groups through better access to essential services  </td>
+                                            <td>Uncertainty about the future of the Director of HI Department (rumours of early retirement)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>WHO report: Health for All to be published in October with strong messaging on HI as a sustainable measure for MIC</td>
+                                            <td>GDP growth slowed down in the last years. Forecast partially optimistic but still fears of fewer tax revenues</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="data-entry3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                            <label for="enabling-factor">Enabling Factor</label>
+                                            <textarea class="form-control" rows="3" id="enabling-factor" placeholder="Enter Enabling Factor"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="barrier">Barrier</label>
+                                                <textarea class="form-control" rows="3" id="barrier" placeholder="Enter Barrier"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-default" type="button" ><i class="fa fa-plus-square-o"></i> Add Barrier</button>
+                                    <hr>
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>Enabling factors</th>
+                                            <th>Barriers </th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Expanding coverage was already discussed in previous reform and awareness was raised among some of the current NA members</td>
+                                            <td>Limited human resources in the organization (UNICEF policy advisor will take paternal leave for two months)</td>
+                                            <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Increasing support in decision-making circles to expand protection of disadvantaged groups through better access to essential services  </td>
+                                            <td>Uncertainty about the future of the Director of HI Department (rumours of early retirement)</td>
+                                            <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                        </tr>
+                                        <tr>
+                                            <td>WHO report: Health for All to be published in October with strong messaging on HI as a sustainable measure for MIC</td>
+                                            <td>GDP growth slowed down in the last years. Forecast partially optimistic but still fears of fewer tax revenues</td>
+                                            <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                        </tr>
+                                    </table>
+                                    <button class="btn btn-success" type="button" >Save</button>
+                                    <button class="btn btn-success" type="button" >Save & Finish</button>
                                 </div>
                         </div>
                     </div>
