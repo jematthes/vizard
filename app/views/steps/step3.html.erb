@@ -246,46 +246,54 @@ $('#myTab a').click(function (e) {
                                       </div>
                                       <div class="row">
                                         <div class="col-md-12">
-                                            <table class="table table-bordered">
-                                              <thead>
-                                                <tr>
-                                                  <th>Actor Type</th>
-                                                  <th>Name</th>
-                                                  <th>Support</th>
-                                                  <th>Influence</th>
-                                                  <th>Actions</th>
-                                                </tr>
-                                              </thead>
-                                              <tbody>
-                                                <tr>
-                                                  <td>Person</td>
-                                                  <td>José Garrido</td>
-                                                  <td>Neutral</td>
-                                                  <td>Influential</td>
-                                                  <td class="text-right actions">
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>Organization</td>
-                                                  <td>Marcel Augsburger</td>
-                                                  <td>Actively Contrary</td>
-                                                  <td>Influential</td>
-                                                  <td class="text-right actions">
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td>Person</td>
-                                                  <td>José Garrido</td>
-                                                  <td>Neutral</td>
-                                                  <td>Influential</td>
-                                                  <td class="text-right actions">
-                                                        <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
+                                            <div class="panel panel-default">
+                                              <div class="panel-heading">
+                                                <h4 class="panel-title"><a data-toggle="collapse" href="#actors1" aria-expanded="false" aria-controls="collapseExample">Active supporters with influence</a></h4>  
+                                              </div>      
+                                              <div class="collapse steps in" id="actors1">
+                                               <table class="table table-bordered">
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Actor Type</th>
+                                                      <th>Name</th>
+                                                      <th>Support</th>
+                                                      <th>Influence</th>
+                                                      <th>Actions</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td>Person</td>
+                                                      <td>José Garrido</td>
+                                                      <td>Neutral</td>
+                                                      <td>Influential</td>
+                                                      <td class="text-right actions">
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Organization</td>
+                                                      <td>Marcel Augsburger</td>
+                                                      <td>Actively Contrary</td>
+                                                      <td>Influential</td>
+                                                      <td class="text-right actions">
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                      </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>Person</td>
+                                                      <td>José Garrido</td>
+                                                      <td>Neutral</td>
+                                                      <td>Influential</td>
+                                                      <td class="text-right actions">
+                                                            <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this sandbox?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
+                                            
                                              <hr>
                                             <button class="btn btn-success" type="button" >Save</button> 
                                             <button class="btn btn-success nextBtn" type="button" >Save & Next</button>
