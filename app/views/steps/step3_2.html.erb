@@ -1,0 +1,635 @@
+<div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-circle btn-default">1</a>
+            <p>Step 1 - Understand the policy process</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-2" type="button" class="btn btn-default btn-circle btn-primary">2</a>
+            <p>Step 2 - List actors and Power map</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
+            <p>Step 3 - Identify (additional) enabling factors and barriers</p>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12">
+    <div class="col-md-12">
+        <h3>Step 2 - Map the actors</h3>
+        <p>Identify stakeholders and plot them over a grid as to where do they stand in terms of influence and support</p>
+        <div class="form-group">
+            <div role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#explication2" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
+                    <li role="presentation"><a href="#data-entry2" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+                </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="explication2">
+                            <h4>Description</h4>
+                            <p>At this stage, you need to assess how much power and influence the key stakeholders you have identified have.</p>
+                            <ul>
+                                <li>Think about their current position on your issue. Would they support or oppose your proposal?; to what extent they agree or disagree with your position? In order to assess their position, it is important to consider aspects such as: are they committing resources (time and money) on the issue (against or in favour)?; are they publicly speaking on the issue?; are they going to events on the subject?</li>
+                                <li>Work out how much power and influence they have. Do they have a big say in the decision or is their influence limited? To make an informed judgement to answer these questions, you may have to do further research. You may need to look at their discourse, attitudes, the procedures they follow and the content of their formal and informal speeches</li>
+                                <li>Plot the stakeholders in the following matrix. When mapping stakeholders onto the matrix, you need to consider the position of the actors in relation to the others. You may use names, symbols or numbers to plot the actors</li>
+                            </ul>
+                            <p>Once you have finalized the mapping, you should spend time in analysing and discussing its implications for your advocacy strategy:</p>
+                            <ul>
+                              <li>Does the mapping identify who have the power to bring about change? (decision maker/s) </li>
+                              <li>Is the distribution of actors (not) favourable to you?. To what extent?</li>
+                              <li>If not, do you have enough capacity to move the opponents? By when (short/medium/long term)?</li>
+                              <li>Are there any patterns in terms of which stakeholders are opposed and which ones are allies?</li>
+                              <li>Do you have access to the most powerful actors? </li>
+                              <li>Does your analysis include people decision-makers listen to? (influencers) Do you need to do further research?</li>
+                            </ul>
+                            <p>This discussion should be integrated in your advocacy strategy. The strategy timing, targeting and tactics should be consistent with the conclusions obtained in this analysis.</p>
+                            <p>The actors can be classified in different types of categories according to their position and power.</p>
+                            <hr>
+                            <h4>Example</h4>
+                            <table class="table table-bordered">
+                              <tr>
+                                <th>Categories of actors </th>
+                                <th>Actors </th>
+                              </tr>
+                              <tr>
+                                <td>Active supporters with influence (very influential/significant/moderate influence)*</td>
+                                <td>Director of the Department on Health Insurance<br>
+                                National Assembly Social Affairs Committee<br>
+                                WHO<br>
+                                INGO “X”
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Passive supporters with influence (very influential/significant/moderate influence)*</td>
+                                <td>Minister of Health<br>
+                                UNWOMEN
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Active allies with low influence </td>
+                                <td>NGO coalition on HIV</td>
+                              </tr>
+                              <tr>
+                                <td>Neutrals with influence (very influential/significant/moderate influence)*</td>
+                                <td>Prime Minister<br>
+                                Chief editor of XX newspaper
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Active opponents with influence (very influential/significant/moderate influence)*</td>
+                                <td>Minister of Finance<br>
+                                Opposition Party<br>
+                                Journalist XX
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Passive opponents with influence (very influential/significant/moderate influence)*</td>
+                                <td>IMF<br>
+                                Private insurance companies
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Active opponents with low influence</td>
+                                <td>-</td>
+                              </tr>
+                              <tr>
+                                <td>Passive allies with low influence</td>
+                                <td>Affected women and children</td>
+                              </tr>
+                              <tr>
+                                <td>Passive opponents with low influence</td>
+                                <td>Party XX</td>
+                              </tr>
+                              <tr>
+                                <td>Neutrals with no influence</td>
+                                <td>Party XX</td>
+                              </tr>
+                            </table>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="data-entry2">
+                            <div class=row>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="actor-type">Actor Type</label>
+                                        <select class="form-control" id="actor-type">
+                                          <option>Select actor type</option>
+                                          <option>Organization</option>
+                                          <option>Person</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="support-level">Support</label>
+                                        <select class="form-control" id="support-level">
+                                          <option>Select Support level</option>
+                                          <option>Active supporters</option>
+                                          <option>Passive supporters</option>
+                                          <option>Active allies</option>
+                                          <option>Neutrals</option>
+                                          <option>Active opponents</option>
+                                          <option>Passive opponents</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="influence-level">Influence</label>
+                                        <select class="form-control" id="influence-level">
+                                          <option>Select Influence Level</option>
+                                          <option>Very influential</option>
+                                          <option>Significant influence</option>
+                                          <option>Moderate influence</option>
+                                          <option>Low influence</option>
+                                          <option>No influence</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-default" type="button" ><i class="fa fa-plus-square-o"></i> Add Actor</button>
+                                    <hr>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors1" aria-expanded="false" aria-controls="collapseExample">Active supporters with influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors1">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Very Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Significant Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Moderate Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors2" aria-expanded="false" aria-controls="collapseExample">Passive supporters with influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors2">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Very Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Significant Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Moderate Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors3" aria-expanded="false" aria-controls="collapseExample">Active allies with low influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors3">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors4" aria-expanded="false" aria-controls="collapseExample">Neutrals with influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors4">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Very Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Significant Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Moderate Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors5" aria-expanded="false" aria-controls="collapseExample">Active opponents with influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors5">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Very Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Significant Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Moderate Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors6" aria-expanded="false" aria-controls="collapseExample">Passive opponents with influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors6">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Very Influential</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Significant Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Moderate Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors7" aria-expanded="false" aria-controls="collapseExample">Active opponents with low influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors7">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors8" aria-expanded="false" aria-controls="collapseExample">Passive allies with low influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors8">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors9" aria-expanded="false" aria-controls="collapseExample">Passive opponents with low influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors9">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>Low Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                      <div class="panel-heading">
+                                        <h4 class="panel-title"><a data-toggle="collapse" href="#actors10" aria-expanded="false" aria-controls="collapseExample">Neutrals with no influence</a></h4>  
+                                      </div>      
+                                      <div class="collapse steps in" id="actors10">
+                                       <table class="table table-bordered">
+                                          <thead>
+                                            <tr>
+                                                  <th>Important</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Name</th>
+                                                  <th>Influence</th>
+                                                  <th class="text-right">Actions</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-check-square" title="Important"></i></a></td>
+                                              <td>Person</td>
+                                              <td>José Garrido</td>
+                                              <td>No Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Organization</td>
+                                              <td>Party XX</td>
+                                              <td>No Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td><a href="#"><i class="fa fa-square" title="Normal Importance"></i></a></td>
+                                              <td>Person</td>
+                                              <td>Marcel Augsburger</td>
+                                              <td>No Influence</td>
+                                              <td class="text-right actions">
+                                                    <a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+
+
+                                     <hr>
+                                    <button class="btn btn-success" type="button" >Save</button> 
+                                    <button class="btn btn-success nextBtn" type="button" >Save & Next</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
