@@ -7,4 +7,8 @@ class StepsController < ApplicationController
   end
   def step411
   end
+  def step4_1
+  end
+  def step4_2
+  end
 end
