@@ -1,0 +1,15 @@
+<h1><%= @board.name %></h1>
+<br>
+<ul>
+    <% @board.lists.each do |list| %>
+        <li><%= list.name %></li>
+        <>
+    <% end %>
+
+    <% @board.lists.first.cards.each do |card| %>
+        <li>CARD <%= card.name %></li>
+    <% end %>
+</ul>
+    <%# "Lists: #{@board.lists.map {|x| x.name}.join(', ')}" %>
+<br>
+    <%# "Members: #{@board.members.map {|x| x.full_name}.join(', ')}" %>

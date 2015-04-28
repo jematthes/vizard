@@ -17,6 +17,7 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem 'ruby-trello'
 
 group :development do
   gem 'better_errors'

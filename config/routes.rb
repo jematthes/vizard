@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'steps/step1'
   resources :projects
 
+  get 'trello/index'
+
   resources :resources
 
   devise_for :users, :controllers => {:registrations => "registrations"}
