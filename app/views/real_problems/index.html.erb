@@ -1,0 +1,27 @@
+<h1>Listing real_problems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @real_problems.each do |real_problem| %>
+      <tr>
+        <td><%= real_problem.title %></td>
+        <td><%= real_problem.description %></td>
+        <td><%= link_to 'Show', real_problem %></td>
+        <td><%= link_to 'Edit', edit_real_problem_path(real_problem) %></td>
+        <td><%= link_to 'Destroy', real_problem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Real problem', new_real_problem_path %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @activity.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @activity.description %>
+</p>
+
+<p>
+  <strong>Outcomes:</strong>
+  <ul>
+    <% @activity.outcomes.each do |outcome| %>
+      <li><%= link_to outcome.title, objective_outcome_path(outcome.objective, outcome) %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Asks:</strong>
+  <table>
+    <thead>
+      <th>Title</th>
+    </thead>
+    <tbody>
+      <% @activity.asks.each do |ask| %>
+        <tr>
+          <td><%= ask.title %></td>
+          <td><%= link_to "Show", [@activity, ask] %></td>
+          <td><%= link_to "Edit", edit_activity_ask_path(@activity, ask) %></td>
+          <td><%= link_to "Delete", [@activity, ask], method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Ask", new_activity_ask_path(@activity) %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

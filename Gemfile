@@ -17,6 +17,9 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'devise'
 gem 'cancancan', '~> 1.10'
+gem "bower-rails"
+gem 'wicked'
+gem 'ng-rails-csrf'
 gem 'ruby-trello'
 
 group :development do
@@ -46,6 +49,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem "chromedriver-helper"
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'

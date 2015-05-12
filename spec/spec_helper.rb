@@ -17,6 +17,7 @@
 require 'coveralls'
 require 'devise'
 require 'support/controller_macros'
+require 'capybara'
 Coveralls.wear!('rails')
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -88,4 +89,6 @@ RSpec.configure do |config|
 =end
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros, :type => :controller
+  # Add capybara
+  config.include Capybara::DSL
 end

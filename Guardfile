@@ -41,5 +41,8 @@ guard :rspec, cmd: 'bundle exec rspec' do
   # Turnip features and steps
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
+
+  # Javascript tests
+  watch(%r{^spec/javascript/.*_spec\.js\.erb$})       { |m| system("rspec spec/javascript/runner.rb") }
 end
 

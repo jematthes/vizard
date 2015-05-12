@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @real_problem.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @real_problem.description %>
+</p>
+
+<p>
+  <strong>Policy Problems:</strong>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @real_problem.policy_problems.each do |policy_problem| %>
+      <tr>
+        <td><%= policy_problem.title %></td>
+        <td><%= policy_problem.description %></td>
+        <td><%= link_to 'Show', [@real_problem, policy_problem] %></td>
+        <td><%= link_to 'Edit', edit_real_problem_policy_problem_path(@real_problem, policy_problem) %></td>
+        <td><%= link_to 'Destroy', [@real_problem, policy_problem], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Policy problem', new_real_problem_policy_problem_path(@real_problem) %>
+
+</p>
+
+<%= link_to 'Edit', edit_real_problem_path(@real_problem) %> |
+<%= link_to 'Back', real_problems_path %>

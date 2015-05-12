@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h3 class="modal-title">Solutions for {{policy.title}}</h3>
+</div>
+<div class="modal-body">
+  <solutions-form data-policy="policy" data-problem-id="problem_id" data-solutions="{{solutions}}"></solutions-form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok($event)">OK</button>
+</div>
+{{solution.title}}

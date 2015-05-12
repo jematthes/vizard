@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @objective.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @objective.description %>
+</p>
+
+<p>
+  <strong>Prioritized:</strong>
+  <%= @objective.prioritized %>
+</p>
+
+<p>
+  <strong>Solutions:</strong>
+  <ul>
+    <% @objective.solutions.each do |solution| %>
+      <li><%= link_to solution.title, real_problem_policy_problem_solution_path(solution.policy_problem.real_problem, solution.policy_problem, solution) %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Outcomes:</strong>
+  <table>
+    <thead>
+      <th>Title</th>
+    </thead>
+    <tbody>
+      <% @objective.outcomes.each do |outcome| %>
+        <tr>
+          <td><%= outcome.title %></td>
+          <td><%= link_to 'Show', [@objective, outcome] %></td>
+          <td><%= link_to 'Edit', edit_objective_outcome_path(@objective, outcome) %></td>
+          <td><%= link_to 'Destroy', [@objective, outcome], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New Outcome", new_objective_outcome_path(@objective) %>
+</p>
+
+<%= link_to 'Edit', edit_objective_path(@objective) %> |
+<%= link_to 'Back', objectives_path %>

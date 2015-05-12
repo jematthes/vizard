@@ -1,88 +1,119 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><%= content_for?(:title) ? yield(:title) : "Wizard" %></title>
-        <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Vizard Rails" %>">
-        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
-        <%= csrf_meta_tags %>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container">
-                    <a class="company-logo" href="/">Wizard</a><span class="tagline">beta</span>
-
-                    <% if( user_signed_in? ) %>
-                    <ul class="nav navbar-nav">
-                        <li><a href="/sandboxes">Sandboxes</a></li>
-                        <li><a href="#">Templates</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                    </ul>
-                    <ul class="nav navbar-right top-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome, <%= current_user.email %> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="/users/edit">My Account</a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <% else %>
-                    <div class="nav pull-right">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                            Sign in <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" style="padding: 15px; right: 0; left: initial;" role="menu">
-                            <%= render 'layouts/signin' %>
-                        </ul>
-                        <!-- this prevent close the dropdown menu http://stackoverflow.com/a/16050828 -->
-                        <script type="text/javascript">
-                        $('.dropdown-menu input').click(function(e) {
-                            e.stopPropagation();
-                        });
-                        </script>
-                    </div>
-                    <% end %>
-                </div>
-
-                <div class="container">
-                    <div class="clearfix toolbarName">
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <%= yield :top %>
-        <div role="main" class="container FullPage">
-            <%= yield %>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Wizard" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Vizard Rails" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+    <%= csrf_meta_tags %>
+  </head>
+  <body ng-app="wizard-steps" >
+    <header>
+      <% if( user_signed_in? ) %>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Wizard <span>Beta</span></a>
         </div>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="mtb40">
-                        <div class="col-md-8">
-                            <h3 class="mb20">Developed by</h3>
-                            <a href="//www.unicef.org/" target="_blank" alt="UNICEF"><%= image_tag "UNICEF.png" %></a><a href="//ciudadanointeligente.org/" target="_blank" alt="Fundación Ciudadano Inteligente"><%= image_tag "FCI.png" %></a>
-                        </div>
-                        <div class="col-md-4">
-                            <h3 class="mb20">Contact</h3>
-                            <ul class="list-unstyled">
-                              <li><i class="fa fa-phone"></i> +56 2 2419 2770</li>
-                              <li><i class="fa fa-envelope"></i> <a href="#">Contacto Prensa</a></li>
-                              <li><i class="fa fa-map-marker"></i>Holanda 895, Providencia</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Documents</a></li>
+            <li><a href="#">Tools</a></li>
+          </ul>
+          <ul class="nav navbar-right top-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Welcome, <%= current_user.email %> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/users/edit">My Account</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        </div>
+      </nav>
+      <% else %>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Wizard <span>Beta</span></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="nav pull-right">
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              Sign in <span class="caret"></span>
+              </button>
+                <ul class="dropdown-menu" style="padding: 15px; right: 0; left: initial;" role="menu">
+                  <%= render 'layouts/signin' %>
+                </ul>
+                <!-- this prevent close the dropdown menu http://stackoverflow.com/a/16050828 -->
+                <script type="text/javascript">
+                  $('.dropdown-menu input').click(function(e) {
+                      e.stopPropagation();
+                  });
+                </script>
+          </div>
+        </div>
+      </nav>
+      <% end %>
+      <div class="breadcrumb_bg">
+        <ol class="breadcrumb container">
+          <li>
+            <a href="#">Projects</a>
+          </li>
+          <li class="active">Stage 1</li>
+        </ol>
+      </div>
+    </header>
+<%= yield :top %>
+    <div role="main" class="container FullPage">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-8 col-lg-8">
+            <p class="brand" href="#">Wizard <span>Beta</span></p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec .</p>
+              </div>
             </div>
-        </footer>
-    </body>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+            <h5>Contact</h5>
+            <p><i class="fa fa-phone-square"></i> +56 2 2419 2770</p>
+            <p><i class="fa fa-envelope"></i> <a href="">Press Contact</a></p>
+            <p>&nbsp;<i class="fa fa-map-marker"></i>&nbsp; Holanda 895, Providencia</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

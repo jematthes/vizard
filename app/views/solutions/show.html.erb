@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @solution.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @solution.description %>
+</p>
+
+<p>
+  <strong>Objectives:</strong>
+  <ul>
+    <% @solution.objectives.each do |objective| %>
+      <li><%= link_to objective.title, objective_path(objective) %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Policy problem:</strong>
+  <%= link_to @policy_problem.title, real_problem_policy_problem_path(@real_problem, @policy_problem) %>
+</p>
+
+<%= link_to 'Back', real_problem_policy_problem_path(@real_problem, @policy_problem) %> |
+<%= link_to 'Edit', edit_real_problem_policy_problem_solution_path(@real_problem, @policy_problem, @solution) %>

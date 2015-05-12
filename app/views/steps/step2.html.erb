@@ -1,0 +1,82 @@
+<script type="text/javascript">
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $('#myTab a:first').tab('show') // Select first tab
+})
+</script>
+<h3>Formulate your policy solutions as objectives and prioritize</h3>
+<p>Defining and agreeing on your prioritized advocacy change objectives (desirable situations to be achieved)</p>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation"><a href="#explication" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
+  <li role="presentation" class="active"><a href="#data-entry" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane" id="explication">
+    <h4>Description</h4>
+    <p>The policy solution that you identified in section above should be formulated as a goal. The advocacy goals are what the organization hopes to achieve in the long term, possible over several years, it is the overall policy change that is desired as a result of advocacy effort.</p>
+    <p>The advocacy goals usually refer to:</p> 
+    <ol type="a">
+      <li><strong>Policy development:</strong> Ex. Government develops a nutrition national plan</li>
+      <li><strong>Placement on the policy agenda:</strong> Ex: EU requests White Paper on new financing mechanisms</li>
+      <li><strong>Policy adoption:</strong> Ex: Country XX approves equal pay act</li>
+      <li><strong>Policy blocking:</strong> Ex. Parliament rejects Government’s anti-homosexuality Bill</li>
+      <li><strong>Policy implementation:</strong> Ex. Police in country XX follows EU law that forbids summary deportations</li>
+      <li><strong>Policy maintenance:</strong> Example: EU member states do not reduce budgets for child protection policies</li>
+    </ol>
+    <p>Or may be comprehensive and include several of the elements above: For example, a ´National Children´s Act´ combining several of the elements above.</p>
+    <p>Depending on the context and the timeframe of the strategy, the advocacy goals can also refer to a discursive change.*</p>
+    <p>*Can cluster multiple policy solutions into one objective, or cluster multiple objectives together.</p>
+    <p>➔ Formulate your policy solution as a goal, being as exact as possible about who, what, where and when. This will help you to strategise, monitor and evaluate your advocacy work. However, often you may need to go further in the planning process, do some research and come back to these objectives in order to define them more precisely</p>
+    <hr>
+    <h4>Example</h4>
+    <p>By 2017 the Government approves a modification of Decree XX with an increase of 50% in social benefits for poor families</p>
+  </div>
+  <div role="tabpanel" class="tab-pane active" id="data-entry" ng-controller="step2Ctrl">
+    <div class="row">
+      <div class="col-md-6">
+        <p><%= flash[:notice]%></p>
+        <% form_url = @objective.new_record? ? create_ww_objectives_path : update_ww_objective_path(@objective) %>
+        <%= simple_form_for(@objective, url: form_url, wrapper: :vertical_input_group) do |f| %>
+          <%= f.error_notification %>
+            <%= f.association :solutions, as: :select, multiple: :multiple, input_html: {'ng-model' => 'fields.solutions'} %>
+            <%= f.input :title, placeholder: "Objective Title", input_html: {'ng-model' => 'fields.title'} %>
+            <%= f.input :description, placeholder: "Objective Description", input_html: {'ng-model' => 'fields.description'} %>
+            <%= f.input :prioritized, input_html: { width: "0", heigth: "0" }, input_html: {'ng-model' => 'fields.prioritized'} %>
+          <div class="form-actions">
+            <%= f.button :button, class: "btn-default" do %>
+              <i class="fa fa-plus-square-o"></i> <%= @objective.new_record? ? 'Add Objective' : 'Edit Objective' %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <h4>Solution 1 {{fields.title}}</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Objetives</th>
+              <th>Total</th>
+              <th>Prioritized</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @objectives.each do |objective| %>
+              <tr>
+                <td><%= objective.title %></td>
+                <td class="text-center">9</td>
+                <td class="text-center">
+                  <i class="<%= objective.prioritized? ? "fa fa-check-square" : "fa fa-times" %>" title="Priority"></i>
+                </td>
+                <td class="text-right actions">
+                      <a href="<%= step_path(:step2, objective_id: objective) %>"><i class="fa fa-edit" title="Edit"></i></a>
+                      <a data-confirm="Are you sure you want to permanently delete this Objective?" data-method="delete" href="<%= destroy_ww_objective_path(objective) %>" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<h1>Listing outcomes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Objective</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @outcomes.each do |outcome| %>
+      <tr>
+        <td><%= outcome.title %></td>
+        <td><%= outcome.description %></td>
+        <td><%= outcome.objective %></td>
+        <td><%= link_to 'Show', [@objective, outcome] %></td>
+        <td><%= link_to 'Edit', edit_objective_outcome_path(@objective, outcome) %></td>
+        <td><%= link_to 'Destroy', [@objective, outcome], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Outcome', new_objective_outcome_path(@objective) %>

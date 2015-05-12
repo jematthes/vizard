@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @outcome.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @outcome.description %>
+</p>
+
+<p>
+  <strong>Objective:</strong>
+  <%= link_to @outcome.objective.title, @outcome.objective %>
+</p>
+
+<p>
+  <strong>Activities:</strong>
+  <ul>
+    <% @outcome.activities.each do |activity| %>
+      <li><%= link_to activity.title, activity%></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_objective_outcome_path(@objective, @outcome) %> |
+<%= link_to 'Back', objective_path(@objective) %>

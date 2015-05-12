@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @policy_problem.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @policy_problem.description %>
+</p>
+
+<p>
+  <strong>Real problem:</strong>
+  <%= link_to @policy_problem.real_problem.title, real_problem_path(@real_problem) %>
+</p>
+
+<p>
+  <strong>Policy Solutions:</strong>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policy_problem.solutions.each do |solution| %>
+      <tr>
+        <td><%= solution.title %></td>
+        <td><%= solution.description %></td>
+        <td><%= link_to 'Show', [@real_problem, @policy_problem, solution] %></td>
+        <td><%= link_to 'Edit', edit_real_problem_policy_problem_solution_path(@real_problem, @policy_problem, solution) %></td>
+        <td><%= link_to 'Destroy', [@real_problem, @policy_problem, solution], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Policy solution', new_real_problem_policy_problem_solution_path(@real_problem, @policy_problem) %>
+
+</p>
+
+<%= link_to 'Edit', edit_real_problem_policy_problem_path(params[:real_problem_id], @policy_problem) %> |
+<%= link_to 'Back', real_problem_path(@real_problem) %>

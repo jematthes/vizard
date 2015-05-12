@@ -1,0 +1,289 @@
+<script type="text/javascript">
+$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $('#myTab a:first').tab('show') // Select first tab
+})
+</script>
+<div class="container">
+<div class="stepwizard">
+    <div class="stepwizard-row setup-panel">
+        <div class="stepwizard-step">
+            <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+            <p>Step 1 - Define the interim outcomes</p>
+        </div>
+        <div class="stepwizard-step">
+            <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+            <p>Step 2 - How do you envision the change to happen? (Theory of change)</p>
+        </div>
+    </div>
+</div>
+
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+                <h3>Step 1 - Define the interim outcomes</h3>
+                <p>The interim outcomes are key changes that need to happen in order to achieve the advocacy objetive</p>
+                <div class="form-group">
+                    <div role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#explanation" aria-controls="home" role="tab" data-toggle="tab">Explanation</a></li>
+                            <li role="presentation"><a href="#data-entry" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+                        </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="explanation">
+                                    <h4>Description</h4>
+                                    <p>The definition of the interim outcomes corresponds to the description of how you envision that the change will take place.</p>
+                                    <p>By this point in the planning process, the analysis to underpin an advocacy strategy is complete. The analysis must be pulled together and guide the definition of the shorter term results (interim outcomes) that must be achieved in order to reach the advocacy objective and the actions that will contribute to the interim outcomes (UNICEF (2010) Advocacy toolkit). Developing an advocacy strategy entails figuring out how to reach interim outcomes while keeping the long-term vision alive. </p>
+                                    <p>The interim outcomes usually refer to some of the following elements </p>
+                                    <table class="table table-bordered">
+                                      <tr>
+                                        <th>Frequent interim outcomes</th>
+                                        <th>Definition</th>
+                                      </tr>
+                                      <tr>
+                                        <td>Political will</td>
+                                        <td>Willingness of policymakers to act in support of an issue or policy proposal</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Public will</td>
+                                        <td>Willingness of a (non-policymaker) target audience to act in support of an issue or policy proposal</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Attitudes or beliefs</td>
+                                        <td>Target audiences´ thoughts, feeling or judgements about an issue or policy proposal</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Salience</td>
+                                        <td>The importance a target audience assigns an issue or policy proposal</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Awareness</td>
+                                        <td>Audience recognition that a problem exists or familiarity with a policy proposal</td>
+                                      </tr>
+                                      <tr>
+                                        <td>New champions</td>
+                                        <td>High-profile individuals who adopt an issue and publicly advocate for it</td>
+                                      </tr>
+                                      <tr>
+                                        <td>New advocates</td>
+                                        <td>Previously unengaged individuals who take action in support of an issue or position</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Partnerships or alliances</td>
+                                        <td>Mutually beneficial relationships with other organizations or individuals who support or participate in an advocacy strategy</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Constituency or support-base growth</td>
+                                        <td>Increase in the number of individuals who can be counted on for sustained advocacy or action on an issue</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Media coverage</td>
+                                        <td>Quantity and or quality of coverage generated in print, broadcast or electronic media</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Issue reframing</td>
+                                        <td>Changes in how an issue is presented, discussed or perceived</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Organizational advocacy capacity</td>
+                                        <td>The ability of an organization or coalition to lead, adapt and manage and implement advocacy strategy</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Organizational visibility or issue recognition</td>
+                                        <td>Identification of an organization or campaign as a credible source on an issue</td>
+                                      </tr>
+                                    </table>
+                                    <p>The selection of the interim outcomes is based on the conclusions from the previous analysis: actor mapping, decision-making process, enabling factors and barriers (including the contextual information obtained from the prioritization table). The following table exemplifies the connections between the analysis and the definition of outcomes:</p>
+                                    <table class="table table-bordered">
+                                      <tr>
+                                        <th>Scenario</th>
+                                        <th>Probable interim outcomes</th>
+                                      </tr>
+                                      <tr>
+                                        <td>Advocacy objective: placement on the policy agenda<br>
+                                        Actor mapping: absence of active allies with influence
+                                        </td>
+                                        <td>Political will<br>
+                                        New champions<br>
+                                        New advocates or public will (so they put pressure on those passive allies to become active)
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Advocacy objective: policy adoption.<br>
+                                        Actor mapping: active supporters and opponents with similar level of power + Public is neutral + few grassroots organizations with some influence working on the issue<br>
+                                        Decision-making process:  Law to be voted in one year time
+                                        </td>
+                                        <td>Awareness + attitudes or beliefs+ public will<br>
+                                        Partnerships and alliances + constituency growth<br>
+                                        Media coverage
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Advocacy objective: policy maintenance<br>
+                                        Context: UNICEF has limited experience on this issue in the country but it is a key issue for children, there is momentum and UNICEF can</td>
+                                        <td>New champions and new advocates<br>
+                                        Issue reframing<br>
+                                        Media coverage
+                                        </td>
+                                      </tr>
+                                    </table>
+                                    <p>As pointed out in the UNICEF (2010) Advocacy toolkit (pg.58), interim outcomes indicate movements towards the advocacy objective, they are “measures of effect” and therefore they “should also be worded in terms of the desire result or achievement not in terms of the activity or what will be done”.  “Raise support for children’s rights among key decision-makers,” for example, is activity-oriented. A results-oriented outcome is: “Decision-makers X, Y and Z will demonstrate their increased support for children’s rights by calling for increased funding for boys’ and girls’ primary education.”</p>
+
+                                    <hr>
+                                    <h4>Example</h4>
+                                    <ul>
+                                      <li>INGO and UNICEF strengthen their collaboration and jointly advocate the National Assembly and the Government to reform the policy framework on HI in order to cover informal workers and their families (partnerships)</li>
+                                      <li>All UN organizations interested on this issue (WHO, ILO, UNAIDS, UNWOMEN, UNICEF) agree on joint advocacy actions and actively engage in their implementation (partnerships)</li>
+                                      <li>Key neutral media cover and support the issue and give voices to the demands of informal workers (media coverage)</li>
+                                    </ul>
+                                </div>
+                               <div role="tabpanel" class="tab-pane" id="data-entry" ng-controller="step4Ctrl">
+                               		<%= form_tag do %>
+                                    <div class=row>
+		                                <div class="col-md-6">
+		                                    <div class="form-group">
+		                                        <label for="interim-outcome">Interim Outcome</label>
+		                                        <textarea class="form-control" rows="5" id="interim-outcome" placeholder="Enter Interim Outcome" ng-model="current_outcome.description"></textarea>
+		                                    </div>
+		                                </div>
+		                                <div class="col-md-6">
+		                                  <div class="form-group">
+		                                        <label for="interim-outcome-type">Interim Outcome Type</label>
+		                                        <select class="form-control" id="interim-outcome-type" ng-model="current_outcome.outcome_type_id">
+		                                          <option>Select Interim Outcome Type</option>
+		                                          <option>Political will</option>
+		                                          <option>Public will</option>
+		                                          <option>Attitudes or beliefs</option>
+		                                          <option>Salience</option>
+		                                          <option>Awareness</option>
+		                                          <option>New champions</option>
+		                                          <option>New advocates </option>
+		                                          <option>Partnerships or alliances</option>
+		                                          <option>Constituency or support-base growth</option>
+		                                          <option>Media coverage</option>
+		                                          <option>Issue reframing</option>
+		                                          <option>Organizational advocacy capacity</option>
+		                                          <option>Organizational visibility or issue recognition</option>
+		                                          <option>Other</option>
+		                                        </select>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label for="actor-type">Actor Type</label>
+		                                        <select class="form-control" id="actor-type" ng-model="current_outcome.actor_type_id">
+		                                          <option>Select Actor Type</option>
+		                                          <option>Active opponents with influence</option>
+		                                          <option>Active opponents with low influence</option>
+		                                          <option>Passive opponents with influence</option>
+		                                          <option>Passive opponents with low influence</option>
+		                                          <option>Neutrals with influence</option>
+		                                          <option>Neutrals with low influence</option>
+		                                          <option>Passive supporters with influence</option>
+		                                          <option>Passive supporters with low influence</option>
+		                                          <option>Active supporters with influence</option>
+		                                          <option>Active supporters with low influence</option>
+		                                        </select>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="row">
+		                                <div class="col-md-12">
+		                                  <button class="btn btn-default" type="button" ng-click="send_outcome_form()"><i class="fa fa-plus-square-o"></i> Add Interim Outcome</button>
+		                                    <hr>
+		                                </div>
+		                            </div>
+		                            <% end %>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered">
+                                              <thead>
+                                                <tr>
+                                                  <th>Interim Outcome</th>
+                                                  <th>Interim Outcome Type</th>
+                                                  <th>Actor Type</th>
+                                                  <th>Activities Number</th>
+                                                  <th>Actions</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr ng-repeat="outcome in outcomes">
+                                                  <td><a href="step411">{{outcome.description}}</a></td>
+                                                  <td>{{outcome.objective_id}}</td>
+                                                  <td>{{outcome.actor_type_id}}</td>
+                                                  <td><a href="step411#activities">0</a></td>
+                                                  <td class="text-right actions">
+                                                    <i class="fa fa-edit" title="Edit" ng-click="edit_outcome(outcome.id)"></i>
+                                                    <i class="fa fa-trash" title="Delete" ng-click="delete_outcome(outcome.id)"></i>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <hr>
+                                            <button class="btn btn-success" type="button" >Save</button> 
+                                            <button class="btn btn-success nextBtn" type="button" >Save & Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+      <div class="col-md-12">
+          <h3>Step 2 - Theory of Change</h3>
+          <p>How do you envision the change to happen?</p>
+          <hr>
+          <h4>Description</h4>
+          <p>The interim outcomes can be organized in a logical chain where the combined effort of reaching some of them contributes to achieve the overall objective. The deeper you have worked in your analysis of problems the more accurate you will be in organising your outcomes. This logical chain is sometimes known as your theory of change, which explains how do you expect the change to happen and what will pave the way to the implementation of the policy solution that you have described above.</p>
+          <p>You will describe how do you expect the change to happen and what will pave the way to the implementation of the policy solution that you have described above. Your theory of change explains the causal links between your actions and the intended impact.</p>
+          <hr>
+          <button class="btn btn-default" type="button" ><i class="fa fa-external-link"></i> Add Sandbox Theory</button>
+          <hr>
+          <button class="btn btn-success" type="button">Save</button> 
+          <button class="btn btn-success" type="button" >Save & Finish</button>
+      </div>
+    </div>
+    
+</div>

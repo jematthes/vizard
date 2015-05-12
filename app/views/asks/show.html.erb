@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ask.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ask.description %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= link_to @activity.title, @activity %>
+</p>
+
+<%= link_to 'Edit', edit_activity_ask_path(@activity, @ask) %> |
+<%= link_to 'Back', activity_path(@activity) %>

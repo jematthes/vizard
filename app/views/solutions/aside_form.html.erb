@@ -1,0 +1,28 @@
+<%= form_tag do %>
+  <div class="form-group">
+    <%= label_tag(:title, "Title") %>
+    <%= text_field_tag :title, nil, {class: "form-control", :"ng-model" => "current_solution.title", placeholder: "Title for a solution"}%>
+  </div>
+  <div class="form-group">
+    <%= label_tag(:description, "Description") %>
+    <%= text_area_tag :description, nil, {class: "form-control", :"ng-model" => "current_solution.description", placeholder: "Description for a solution"}%>
+  </div>
+  <div class="form-group">
+    <%= button_tag "{{solution_button_txt}}", {class: "btn", :"ng-click" => "save_or_update_solution()", type: "button"} %>
+  </div>
+<% end %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Solutions</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="solution in solutions">
+        <td>{{solution.title}}</td>
+        <td><%= button_tag "Edit", {class: "btn", :"ng-click" => "edit_solution(solution)", type: "button"}%></td>
+    </tr>
+    <!-- <tr><td>{{current_solution.title}}</td></tr> -->
+  </tbody>
+</table>

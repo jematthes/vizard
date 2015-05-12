@@ -1,0 +1,945 @@
+<script type="text/javascript">
+$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $('#myTab a:first').tab('show') // Select first tab
+})
+</script>
+<div class="container" ng-controller="step3Ctrl">
+	<div class="stepwizard">
+		<div class="stepwizard-row setup-panel">
+			<div class="stepwizard-step">
+				<a href="#step-1" type="button" class="btn btn-primary btn-circle" disabled="disabled">1</a>
+				<p>Step 1 - Understand the policy process</p>
+			</div>
+			<div class="stepwizard-step">
+				<a href="#step-2" type="button" class="btn btn-primary btn-circle">2</a>
+				<p>Step 2 - List actors and Power map</p>
+			</div>
+			<div class="stepwizard-step">
+				<a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+				<p>Step 3 - Identify (additional) enabling factors and barriers</p>
+			</div>
+		</div>
+	</div>
+	<!-- step3_1 -->
+	<div class="row setup-content" id="step-1">
+		<div class="col-xs-12">
+			<div class="col-md-12">
+				<h3>Step 1 - Understand the Institutional and Decision-making Cycles/Policy Process</h3>
+				<p>E.g. intergovernmental negotiations, law-making, budgeting, etc.</p>
+				<div class="form-group">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#explication" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
+							<li role="presentation"><a href="#data-entry" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="explication">
+								<h4>Description</h4>
+								<p>As indicated in the UNICEF (2010) Advocacy Toolkit, in policy spheres particularly, decisions are often made according to a cycle or schedule. To maximise your policy influence you need to have a sound understanding of the policy processes. First, because last-minute interventions rarely work, and the earlier in the decision-making cycle the idea is accepted, the more effective the end result is likely to be. Second, because the analysis of the decision-making process helps to identify opportunities and entry points to begin influencing an issue. </p>
+								<p>The four phases of decision-making usually include:</p>
+								<ol type="a">
+									<li>agenda setting</li>
+									<li>formulation and enactment</li>
+									<li>implementation and enforcement,and </li>
+									<li>monitoring and evaluation.</li>
+								</ol>
+								<p>It is important to remember that decisions are often made through formal and informal processes so you should make sure that you are fully familiar with both.The information, jointly with the stakeholder analysis, will affect your strategy: what you will do and when, with who and who to target. For example, while in the agenda-setting phase you will focus on convincing the policymakers that the topic requires attention, in the formulation phase you will try to influence policymaker on your preferred option for action. </p>
+								<p>The processes differ among countries and policies. If you are working in promoting legislation or a legislation reform you need to have an in-depth understanding on how decisions are made at the Parliament. This will allow you to target specific moments (i.e. discussion in commission or plenary) or structures (i.e Parliamentary commissions) maximizing the impact or your efforts. At the global level the decision-making processes also vary significantly. The WTO negotiations differ from the negotiations on climate change or on the Sustainable Development Goals.</p>
+								<p>It is usually very useful to draw the decision-making process to help people visualize it. </p>
+								<hr>
+								<h4>Example</h4>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in dui sapien. Curabitur porttitor arcu eu tellus porta maximus. Praesent porttitor justo at nunc interdum blandit. Aenean vel ante quis ipsum sagittis pellentesque id ut nisl. Duis nec orci mauris. Morbi scelerisque elit in velit sagittis ultrices.</p>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="data-entry">
+								<div class="form-group">
+									<label for="policy-process">Decision-making Cycles/Policy Process (optional)</label>
+									<textarea class="form-control" rows="3" id="policy-process" placeholder="Enter Decision-making Cycles/Policy Process"></textarea>
+								</div>
+								<hr>
+								<p>Draws the Decision-Making Cycles to help visualize it.</p>
+								<button class="btn btn-default" type="button" ><i class="fa fa-external-link"></i> Draw in Sandbox</button>
+								<button class="btn btn-default" type="button" ><i class="fa fa-download"></i> Download Example Drawing</button>
+								<hr>
+								<button class="btn btn-success" type="button" >Save</button>
+								<button class="btn btn-success nextBtn" type="button" >Save & Next</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- step3_2 -->
+	<div class="row setup-content" id="step-2">
+		<div class="col-xs-12">
+			<div class="col-md-12">
+				<h3>Step 2 - Map the actors</h3>
+				<p>Identify stakeholders and plot them over a grid as to where do they stand in terms of influence and support</p>
+				<div class="form-group">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation"><a href="#explication2" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
+							<li role="presentation" class="active"><a href="#data-entry2" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane" id="explication2">
+								<h4>Description</h4>
+								<p>At this stage, you need to assess how much power and influence the key stakeholders you have identified have.</p>
+								<ul>
+									<li>Think about their current position on your issue. Would they support or oppose your proposal?; to what extent they agree or disagree with your position? In order to assess their position, it is important to consider aspects such as: are they committing resources (time and money) on the issue (against or in favour)?; are they publicly speaking on the issue?; are they going to events on the subject?</li>
+									<li>Work out how much power and influence they have. Do they have a big say in the decision or is their influence limited? To make an informed judgement to answer these questions, you may have to do further research. You may need to look at their discourse, attitudes, the procedures they follow and the content of their formal and informal speeches</li>
+									<li>Plot the stakeholders in the following matrix. When mapping stakeholders onto the matrix, you need to consider the position of the actors in relation to the others. You may use names, symbols or numbers to plot the actors</li>
+								</ul>
+								<p>Once you have finalized the mapping, you should spend time in analysing and discussing its implications for your advocacy strategy:</p>
+								<ul>
+									<li>Does the mapping identify who have the power to bring about change? (decision maker/s) </li>
+									<li>Is the distribution of actors (not) favourable to you?. To what extent?</li>
+									<li>If not, do you have enough capacity to move the opponents? By when (short/medium/long term)?</li>
+									<li>Are there any patterns in terms of which stakeholders are opposed and which ones are allies?</li>
+									<li>Do you have access to the most powerful actors? </li>
+									<li>Does your analysis include people decision-makers listen to? (influencers) Do you need to do further research?</li>
+								</ul>
+								<p>This discussion should be integrated in your advocacy strategy. The strategy timing, targeting and tactics should be consistent with the conclusions obtained in this analysis.</p>
+								<p>The actors can be classified in different types of categories according to their position and power.</p>
+								<hr>
+								<h4>Example</h4>
+								<table class="table table-bordered">
+									<tr>
+										<th>Categories of actors </th>
+										<th>Actors </th>
+									</tr>
+									<tr>
+										<td>Active supporters with influence (very influential/significant/moderate influence)*</td>
+										<td>Director of the Department on Health Insurance<br>National Assembly Social Affairs Committee<br>WHO<br>INGO “X”</td>
+									</tr>
+									<tr>
+										<td>Passive supporters with influence (very influential/significant/moderate influence)*</td>
+										<td>Minister of Health<br>UNWOMEN</td>
+									</tr>
+									<tr>
+										<td>Active allies with low influence </td>
+										<td>NGO coalition on HIV</td>
+									</tr>
+									<tr>
+										<td>Neutrals with influence (very influential/significant/moderate influence)*</td>
+										<td>Prime Minister<br>Chief editor of XX newspaper</td>
+									</tr>
+									<tr>
+										<td>Active opponents with influence (very influential/significant/moderate influence)*</td>
+										<td>Minister of Finance<br>Opposition Party<br>Journalist XX</td>
+									</tr>
+									<tr>
+										<td>Passive opponents with influence (very influential/significant/moderate influence)*</td>
+										<td>IMF<br>Private insurance companies</td>
+									</tr>
+									<tr>
+										<td>Active opponents with low influence</td>
+										<td>-</td>
+									</tr>
+									<tr>
+										<td>Passive allies with low influence</td>
+										<td>Affected women and children</td>
+									</tr>
+									<tr>
+										<td>Passive opponents with low influence</td>
+										<td>Party XX</td>
+									</tr>
+									<tr>
+										<td>Neutrals with no influence</td>
+										<td>Party XX</td>
+									</tr>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane active" id="data-entry2">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors1" aria-expanded="false" aria-controls="collapseExample">Active supporters with influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors1">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: 3}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(3)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors2" aria-expanded="false" aria-controls="collapseExample">Passive supporters with influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors2">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: 2}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(2)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors3" aria-expanded="false" aria-controls="collapseExample">Active allies with low influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors3">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: 1}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(1)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors4" aria-expanded="false" aria-controls="collapseExample">Neutrals with influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors4">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: 0}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(0)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors5" aria-expanded="false" aria-controls="collapseExample">Active opponents with influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors5">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: -1}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(-1)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors6" aria-expanded="false" aria-controls="collapseExample">Passive opponents with influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors6">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: -2}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(-2)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors7" aria-expanded="false" aria-controls="collapseExample">Active opponents with low influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors7">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: -3}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(-3)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors8" aria-expanded="false" aria-controls="collapseExample">Passive allies with low influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors8">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: -4}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(-4)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors9" aria-expanded="false" aria-controls="collapseExample">Passive opponents with low influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors9">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: -5}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(-5)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<h4 class="panel-title"><a data-toggle="collapse" href="#actors10" aria-expanded="false" aria-controls="collapseExample">Neutrals with no influence</a></h4>  
+											</div>      
+											<div class="collapse steps in" id="actors10">
+												<%= form_tag do %>
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th>Important</th>
+															<th>Actor Type</th>
+															<th>Name</th>
+															<th>Influence</th>
+															<th class="text-right">Actions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- bucle -->
+														<tr ng-repeat="actor in actors | filter: {support: -6}">
+															<td>
+																<input type="checkbox" ng-checked="actor.description">
+															</td>
+															<td>{{actor.actor_type}}</td>
+															<td>{{actor.name}}</td>
+															<td>{{actor.influence}}</td>
+															<td class="text-right actions">
+																<i class="fa fa-edit" title="Edit" ng-click="edit_actor(actor.id)"></i>
+																<i class="fa fa-trash" title="Delete"></i>
+															</td>
+														</tr>
+														<!-- end bucle -->
+														<tr>
+															<td>
+																<input type="checkbox" class="form-control" value="1" ng-model="current_actor.description">
+															</td>
+															<td>
+																<select class="form-control" id="actor-type" ng-model="current_actor.actor_type">
+																	<option>Select actor type</option>
+																	<option>Organization</option>
+																	<option>Person</option>
+																</select>
+															</td>
+															<td>
+																<input type="text" class="form-control" id="name" placeholder="Enter name" ng-model="current_actor.name">
+															</td>
+															<td>
+																<select class="form-control" id="influence-level" ng-model="current_actor.influence">
+																	<option value="">Select Influence Level</option>
+																	<option value="2">Very influential</option>
+																	<option value="1">Significant influence</option>
+																	<option value="0">Moderate influence</option>
+																	<option value="-1">Low influence</option>
+																	<option value="-2">No influence</option>
+																</select>
+															</td>
+															<td class="text-right actions">
+																<i class="fa fa-save" ng-click="send_actor_form(-6)"></i>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<% end %>
+											</div>
+										</div>
+										<hr>
+										<button class="btn btn-success" type="button" >Save</button> 
+										<button class="btn btn-success nextBtn" type="button" >Save & Next</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- step3_3  -->
+	<div class="row setup-content" id="step-3">
+		<div class="col-xs-12">
+			<div class="col-md-12">
+				<h3>Step 3 - Identify (additional) enabling factors and barriers</h3>
+				<p>Write enabling factors and barriers</p>
+				<div class="form-group">
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#explication3" aria-controls="home" role="tab" data-toggle="tab">Explication</a></li>
+							<li role="presentation"><a href="#data-entry3" aria-controls="profile" role="tab" data-toggle="tab">Data Entry</a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="explication3">
+								<h4>Description</h4>
+								<p>Through the prioritization criteria table (step 2.2), the actor mapping (step 3.1) and the decision-making cycle analysis (3.2) you will have already identified some enabling factors and barriers to achieve your policy objective.</p>
+								<p>This step gives you the opportunity to consolidate this information and go deeper in the analysis of the context surrounding the specific policy change that you want to pursue.</p> 
+								<p>It consists on the identification of additional relevant enabling factors and barriers bearing in mind a broad range of elements: financial, social, technological, evidence, political, religious, cultural, geographical, within the organization, etc.</p> 
+								<hr>
+								<h4>Example</h4>
+								<table class="table table-bordered">
+									<tr>
+										<th>Enabling factors</th>
+										<th>Barriers </th>
+									</tr>
+									<tr>
+										<td>Expanding coverage was already discussed in previous reform and awareness was raised among some of the current NA members</td>
+										<td>Limited human resources in the organization (UNICEF policy advisor will take paternal leave for two months)</td>
+									</tr>
+									<tr>
+										<td>Increasing support in decision-making circles to expand protection of disadvantaged groups through better access to essential services  </td>
+										<td>Uncertainty about the future of the Director of HI Department (rumours of early retirement)</td>
+									</tr>
+									<tr>
+										<td>WHO report: Health for All to be published in October with strong messaging on HI as a sustainable measure for MIC</td>
+										<td>GDP growth slowed down in the last years. Forecast partially optimistic but still fears of fewer tax revenues</td>
+									</tr>
+								</table>
+							</div>
+						<div role="tabpanel" class="tab-pane" id="data-entry3">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="enabling-factor">Enabling Factor</label>
+										<textarea class="form-control" rows="3" id="enabling-factor" placeholder="Enter Enabling Factor"></textarea>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="barrier">Barrier</label>
+										<textarea class="form-control" rows="3" id="barrier" placeholder="Enter Barrier"></textarea>
+									</div>
+								</div>
+							</div>
+							<button class="btn btn-default" type="button" ><i class="fa fa-plus-square-o"></i> Add Barrier</button>
+							<hr>
+							<table class="table table-bordered">
+								<tr>
+									<th>Enabling factors</th>
+									<th>Barriers </th>
+									<th class="text-right">Actions</th>
+								</tr>
+								<tr>
+									<td>Expanding coverage was already discussed in previous reform and awareness was raised among some of the current NA members</td>
+									<td>Limited human resources in the organization (UNICEF policy advisor will take paternal leave for two months)</td>
+									<td class="text-right actions">
+									<a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>Increasing support in decision-making circles to expand protection of disadvantaged groups through better access to essential services  </td>
+									<td>Uncertainty about the future of the Director of HI Department (rumours of early retirement)</td>
+									<td class="text-right actions">
+									<a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+									</td>
+								</tr>
+								<tr>
+									<td>WHO report: Health for All to be published in October with strong messaging on HI as a sustainable measure for MIC</td>
+									<td>GDP growth slowed down in the last years. Forecast partially optimistic but still fears of fewer tax revenues</td>
+									<td class="text-right actions">
+									<a href="#"><i class="fa fa-edit" title="Edit"></i></a>      <a data-confirm="Are you sure you want to permanently delete this?" data-method="delete" href="#" rel="nofollow"><i class="fa fa-trash" title="Delete"></i></a>
+									</td>
+								</tr>
+							</table>
+							<button class="btn btn-success" type="button" >Save</button>
+							<button class="btn btn-success" type="button" >Save & Finish</button>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

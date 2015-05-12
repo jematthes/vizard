@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QUnit Tests</title>
+
+    <%= stylesheet_link_tag '//code.jquery.com/qunit/qunit-1.17.1.css' %>
+    <%= javascript_include_tag '//code.jquery.com/jquery-1.11.2.js' %>
+    <%= javascript_include_tag '//code.jquery.com/qunit/qunit-1.17.1.js' %>
+    <%= csrf_meta_tag %>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+          <%= yield %>
+        });
+    </script>
+  </head>
+
+  <body>
+    <h1 id="qunit-header">QUnit example</h1>
+    <h2 id="qunit-banner"></h2>
+    <div id="qunit-testrunner-toolbar"></div>
+    <h2 id="qunit-userAgent"></h2>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture">test markup, will be hidden</div>
+  </body>
+</html>
