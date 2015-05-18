@@ -16,6 +16,9 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-google'
 gem 'cancancan', '~> 1.10'
 gem "bower-rails"
 gem 'wicked'
