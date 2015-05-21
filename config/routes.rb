@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     delete :destroy_ww, on: :member
     resources :outcomes
   end
-  
+
   get 'solutions/aside', to: 'solutions#aside'
   get 'solutions/aside_form', to: 'solutions#aside_form'
   get 'solutions/list', to: 'solutions#list'
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   resources :projects
   resources :resources
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :people
   resources :other_names
   resources :sandboxes do

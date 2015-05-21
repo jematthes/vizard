@@ -16,7 +16,7 @@ class RegistrationsController < Devise::RegistrationsController
       else
           clean_up_passwords resource
           resource.errors.full_messages.each {|x| flash[x] = x} # Rails 4 simple way
-          redirect_to root_path 
+          redirect_to root_path
       end
   end
-end 
+end
