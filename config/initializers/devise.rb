@@ -235,6 +235,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], scope: 'email,profile,offline', prompt: 'consent'
+  config.omniauth :trello, ENV['TRELLO_KEY'], ENV['TRELLO_SECRET'], app_name: ENV['APP_NAME'], scope: 'read,write,account', expiration: 'never'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
