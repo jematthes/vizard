@@ -16,10 +16,14 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'devise', '>= 3.5.1'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-trello'
 gem 'cancancan', '~> 1.10'
-gem "bower-rails"
+gem 'bower-rails'
 gem 'wicked'
 gem 'ng-rails-csrf'
+gem 'figaro'
 gem 'acts-as-taggable-on'
 
 group :development do
@@ -49,7 +53,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem "chromedriver-helper"
+  gem 'chromedriver-helper'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'

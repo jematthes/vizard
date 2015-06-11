@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :asks
   end
 
-  
   get 'solutions/aside', to: 'solutions#aside'
   get 'solutions/aside_form', to: 'solutions#aside_form'
   get 'solutions/list', to: 'solutions#list'
@@ -29,9 +28,9 @@ Rails.application.routes.draw do
 
   resources :steps do
     get 'stage1', on: :collection
-    get 'stage4', on: :collection
     get 'stage2', on: :collection
     get 'stage3', on: :collection
+    get 'stage4', on: :collection
     get 'step1', on: :collection
     get 'step2', on: :collection
     get 'step3', on: :collection
@@ -62,7 +61,7 @@ Rails.application.routes.draw do
     get 'stage7', on: :member
   end
 
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :people
   resources :other_names
   resources :sandboxes do

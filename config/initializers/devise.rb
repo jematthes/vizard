@@ -19,6 +19,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
+  require 'omniauth-google-oauth2'
   require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
@@ -233,6 +234,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH2_APP_ID'], ENV['GOOGLE_OAUTH2_APP_SECRET'], scope: 'email,profile,offline', prompt: 'consent'
+  config.omniauth :trello, ENV['TRELLO_KEY'], ENV['TRELLO_SECRET'], app_name: ENV['APP_NAME'], scope: 'read,write,account', expiration: 'never'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
