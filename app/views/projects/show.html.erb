@@ -22,358 +22,143 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="stages">
-      
-    <div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" title="Complete Stage"><a data-toggle="collapse" href="#stage1" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-check-circle"></i> Stage 1: Articulate problems and policy solutions</a></h4>   
-      </div>      
-      <div class="collapse steps" id="stage1">
-        <table class="table table-bordered">
-            <tbody>
-              <!-- real problem -->
-              <tr title="Complete Step">
-                <td class="text-center td-w-10p">
-                  <% if !@project.real_problem.blank? %>
-                  <i class="fa fa-unlock"></i>
-                  <% else %>
-                  <i class="fa fa-lock"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <% if !@project.real_problem.blank? %>
-                  <%= link_to @project.real_problem.title, stage1_project_path, target: "_self"  %>
-                  <% else %>
-                  <%= link_to 'Articulate the real-world problem children are facing that you want to address', stage1_project_path, target: "_self" %>
-                  <% end %>
-                </td>
-              </tr>
-              <!-- policy problems -->
-              <tr title="Complete Step">
-                <td class="text-center td-w-10p">
-                  <% if !@project.real_problem.blank? %>
-                    <% if !@project.real_problem.policy_problems.blank? %>
-                      <i class="fa fa-unlock"></i>
-                    <% else %>
-                      <i class="fa fa-lock"></i>
-                    <% end %>
-                  <% else %>
-                  <i class="fa fa-lock"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <% if !@project.real_problem.blank? %>
-                    <% if !@project.real_problem.policy_problems.blank? %>
-                      <%= link_to "Identify policy dimensions of the 'real-world' problem ( #{@project.real_problem.policy_problems.size} )", stage1_project_path  %>
-                    <% else %>
-                      <%= link_to "Identify policy dimensions of the 'real-world' problem", stage1_project_path, target: "_self" %>
-                    <% end %>
-                  <% else %>
-                      <%= link_to "Identify policy dimensions of the 'real-world' problem", stage1_project_path, target: "_self" %>
-                  <% end %>
-                </td>
-              </tr>
-              <!-- policy solutions -->
-              <tr title="Complete Step">
-                <td class="text-center td-w-10p">
-                  <% if !@project.real_problem.blank? %>
-                      <% if !@project.real_problem.policy_problems.first.solutions.blank? %>
-                        <i class="fa fa-unlock"></i>
-                    <% else %>
-                      <i class="fa fa-lock"></i>
-                    <% end %>
-                  <% else %>
-                      <i class="fa fa-lock"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <% if !@project.real_problem.blank? %>
-                    <% if !@project.real_problem.policy_problems.first.blank? %>
-                      <% @project.real_problem.policy_problems.each do |pp| %>
-                        <%= link_to "Policy solutions: Describe the main policy solutions that would constitute an appropriate response (#{pp.solutions.size})", stage1_project_path  %>
-                      <% end %>
-                    <% else %>
-                      <%= link_to "Policy solutions: Describe the main policy solutions that would constitute an appropriate response", stage1_project_path, target: "_self" %>
-                    <% end %>
-                  <% else %>
-                  <%= link_to "Policy solutions: Describe the main policy solutions that would constitute an appropriate response", stage1_project_path, target: "_self" %>
-                  <% end %>
-                </td>
-              </tr>
-            </tbody>
-      </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" title="You must complete the previous stage"><a data-toggle="collapse" href="#stage2" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-times-circle"></i> Stage 2: Articulate and prioritize objectives (Example)</a></h4>   
-      </div>      
-      <div class="collapse steps" id="stage2">
-        <table class="table table-bordered">
-            <tbody>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>
-					<%= link_to 'Add and prioritize objectives', stage2_project_path(), target: "_self" %>
-				</td>
-              </tr>
-            </tbody>
-      </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title" title="Complete Stage"><a data-toggle="collapse" href="#stage3" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-check-circle"></i> Stage 2: Articulate and prioritize objectives</a></h4>   
-      </div>      
-      <div class="collapse steps" id="stage3">
-        <table class="table table-bordered">
-            <tbody>
-              <tr title="Complete Step">
-                <td class="text-center td-w-10p"><i class="fa fa-unlock"></i></td>
-                <td>
-					<!--<a href="#">Add and prioritize objectives</a>-->
-					<%= link_to 'Add and prioritize objectives', stage2_project_path(), target: "_self" %>
-				</td>
-              </tr>
-            </tbody>
-      </table>
-      </div>
-    </div>
-  </div>
-</div>
-<hr>
-
-<h4 class="title_goals">Stage 3: Set Goals</h4>
-<% @objectives.each do |objective| %>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <table class="table_goals">
-          <tr title="Stage Uninitiated or Incomplete">
-            <td class="td-w-3p"><i class="fa fa-chevron-circle-right pull-left"></i></td>
-            <td><a data-toggle="collapse" href="#goal1" aria-expanded="false" aria-controls="collapseExample"><%= objective.title %></a></td>
-          </tr>
-          </table> 
-        </div>      
-        <div class="collapse steps in" id="goal1">
-          <table class="table table-bordered">
-              <tbody>
-                <tr title="Uninitiated Step">
-                  <td class="text-center td-w-10p">
-                    <i class="fa fa-unlock"></i>
-                  </td>
-                  <td><%= link_to "Understand the institutional and decision-making cycles/Policy process", stage3_project_objective_path(@project, objective), target: "_self" %></td>
-                </tr>
-                <tr title="You must complete the previous step">
-                  <td class="text-center td-w-10p">
-                    <% if @a_size %>
-                    <i class="fa fa-check"></i>
-                    <% else %>
-                    <i class="fa fa-unlock"></i>
-                    <% end %>
-                  </td>
-                  <td>
-                    <%= link_to "List actors and power map", stage3_project_objective_path(@project, objective, anchor: "actors", target: "_self") %>
-                  </td>
-                </tr>
-                <tr title="You must complete the previous step">
-                  <td class="text-center td-w-10p">
-                    <% if @barriers_size || @factors_size %>
-                    <i class="fa fa-check"></i>
-                    <% else %>
-                    <i class="fa fa-unlock"></i>
-                    <% end %>
-                  </td>
-                  <td>
-                    <%= link_to "Identify enabling factors and barriers", stage3_project_objective_path(@project, objective, anchor: "factors-barriers", target: "_self") %>
-                  </td>
-                </tr>
-                <tr title="You must complete the previous step">
-                  <td class="text-center td-w-10p">
-                    <% if @outcomes_size %>
-                    <i class="fa fa-check"></i>
-                    <% else %>
-                    <i class="fa fa-unlock"></i>
-                    <% end %>
-                  </td>
-                  <td>
-                    <%= link_to "Define the interim outcomes and activities", stage4_project_objective_path(@project, objective, target: "_self") %>
-                  </td>
-                </tr>
-                <tr title="You must complete the previous step">
-                  <td class="text-center td-w-10p">
-                    <i class="fa fa-lock"></i>
-                  </td>
-                  <td>
-                    <a href="#">Define theory of change</a>
-                    <!-- # <%= link_to "Define theory of change", stage3_project_objective_path(@project, objective) %> -->
-                  </td>
-                </tr>
-                <tr title="You must complete the previous step">
-                  <td class="text-center td-w-10p">
-                    <i class="fa fa-lock"></i>
-                  </td>
-                  <td>
-                    <a href="#">Develop menssages</a>
-                    <!-- # <%= link_to "Develop menssages", stage3_project_objective_path(@project, objective) %> -->
-                  </td>
-                </tr>
-              </tbody>
-        </table>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title" title="Complete Stage"><a data-toggle="collapse" href="#stage1" aria-expanded="false" aria-controls="collapseExample"><i class="<%= icon_class_stage 1 %>"></i> Stage 1: Articulate problems and policy solutions</a></h4>   
+            </div>      
+            <div class="collapse steps" id="stage1">
+              <table class="table table-bordered">
+                  <tbody>
+                    <!-- real problem -->
+                    <tr title="Complete Step">
+                      <td class="text-center td-w-10p">
+                        <i class="<%= icon_class @real_problem %>"></i>
+                      </td>
+                      <td>
+                        <%= link_to link_text(:real_problem), stage1_project_path, target: "_self"  %>
+                      </td>
+                    </tr>
+                    <!-- policy problems -->
+                    <tr title="Complete Step">
+                      <td class="text-center td-w-10p">
+                          <i class="<%= icon_class @policy_problems, @real_problem %>"></i>
+                      </td>
+                      <td>
+                        <%= link_to link_text(:policy_problems), stage1_project_path, target: "_self" %>
+                      </td>
+                    </tr>
+                    <!-- policy solutions -->
+                    <tr title="Complete Step">
+                      <td class="text-center td-w-10p">
+                        <i class="<%= icon_class @solutions, @policy_problems %>"></i>
+                      </td>
+                      <td>
+                        <%= link_to link_text(:solutions), stage1_project_path, target: "_self" %>
+                      </td>
+                    </tr>
+                  </tbody>
+            </table>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-<% end %>
-<!--
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <table class="table_goals">
-        <tr title="Stage Uninitiated or Incomplete">
-          <td class="td-w-3p"><i class="fa fa-chevron-circle-right pull-left"></i></td>
-          <td><a data-toggle="collapse" href="#goal1" aria-expanded="false" aria-controls="collapseExample">By the end of 2018, the National Assembly/Government revises the Health Insurance policy framework to expand coverage to disadvantaged informal workers and their families and to include PMTCT in the benefit package</a></td>
-        </tr>
-        </table> 
-      </div>      
-      <div class="collapse steps in" id="goal1">
-        <table class="table table-bordered">
-            <tbody>
-              <tr title="Uninitiated Step">
-                <td class="text-center td-w-10p"><i class="fa fa-unlock-alt"></i></td>
-                <td><a href="">Understand the institutional and decision-making cycles/Policy process</a></td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>List actors and power map</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Identify enabling factors and barriers</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Define the interim outcomes and activities</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Define theory of change</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Develop menssages</td>
-              </tr>
-            </tbody>
-      </table>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title" title="You must complete the previous stage"><a data-toggle="collapse" href="#stage2" aria-expanded="false" aria-controls="collapseExample"><i class="<%= icon_class_stage 2 %>"></i> Stage 2: Articulate and prioritize objectives (Example)</a></h4>   
+            </div>
+            <div class="collapse steps" id="stage2">
+              <table class="table table-bordered">
+                <tbody>
+                  <tr title="You must complete the previous step">
+                    <td class="text-center td-w-10p"><i class="<%= icon_class @objectives, @solutions %>"></i></td>
+                    <td>
+                      <%= link_to link_text(:objectives), stage2_project_path, target: "_self" %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <table class="table_goals">
-        <tr title="Stage Uninitiated or Incomplete">
-          <td class="td-w-3p"><i class="fa fa-chevron-circle-right pull-left"></i></td>
-          <td><a data-toggle="collapse" href="#goal2" aria-expanded="false" aria-controls="collapseExample">By the end of 2018, donors raise their external assistance to PMTCT</a></td>
-        </tr>
-        </table> 
-      </div>      
-      <div class="collapse steps in" id="goal2">
-        <table class="table table-bordered">
-            <tbody>
-              <tr title="Uninitiated Step">
-                <td class="text-center td-w-10p"><i class="fa fa-unlock-alt"></i></td>
-                <td><a href="">Understand the institutional and decision-making cycles/Policy process</a></td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>List actors and power map</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Identify enabling factors and barriers</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Define the interim outcomes and activities</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Define theory of change</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Develop menssages</td>
-              </tr>
-            </tbody>
-      </table>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <table class="table_goals">
-        <tr title="Stage Uninitiated or Incomplete">
-          <td class="td-w-3p"><i class="fa fa-chevron-circle-right pull-left"></i></td>
-          <td><a data-toggle="collapse" href="#goal3" aria-expanded="false" aria-controls="collapseExample">By the end of 2018, the National Assembly amends the Penal Code to remove detention among the list of sanctions for sex workers</a></td>
-        </tr>
-        </table> 
-      </div>      
-      <div class="collapse steps in" id="goal3">
-        <table class="table table-bordered">
-            <tbody>
-              <tr title="Uninitiated Step">
-                <td class="text-center td-w-10p"><i class="fa fa-unlock-alt"></i></td>
-                <td><a href="">Understand the institutional and decision-making cycles/Policy process</a></td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>List actors and power map</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Identify enabling factors and barriers</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Define the interim outcomes and activities</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Define theory of change</td>
-              </tr>
-              <tr title="You must complete the previous step">
-                <td class="text-center td-w-10p"><i class="fa fa-lock"></i></td>
-                <td>Develop menssages</td>
-              </tr>
-            </tbody>
-      </table>
-      </div>
-    </div>
-  </div>
-</div>
--->
+      <hr>
+      <h4 class="title_goals">Stage 3: Set Goals</h4>
+      <% @objectives.each do |objective| %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <table class="table_goals">
+                <tr title="Stage Uninitiated or Incomplete">
+                  <td class="td-w-3p"><i class="fa fa-chevron-circle-right pull-left"></i></td>
+                  <td><a data-toggle="collapse" href="#goal1" aria-expanded="false" aria-controls="collapseExample"><%= objective.title %></a></td>
+                </tr>
+                </table> 
+              </div>      
+              <div class="collapse steps in" id="goal1">
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr title="Uninitiated Step">
+                      <td class="text-center td-w-10p">
+                        <i class="fa fa-unlock"></i>
+                      </td>
+                      <td><%= link_to "Understand the institutional and decision-making cycles/Policy process", stage3_project_objective_path(@project, objective), target: "_self" %></td>
+                    </tr>
+                    <tr title="You must complete the previous step">
+                      <td class="text-center td-w-10p">
+                        <i class="<%= icon_class objective.actors %>"></i>
+                      </td>
+                      <td>
+                        <%= link_to objective_link_text(objective, :actors), stage3_project_objective_path(@project, objective, anchor: "actors"), target: "_self" %>
+                      </td>
+                    </tr>
+                    <tr title="You must complete the previous step">
+                      <td class="text-center td-w-10p">
+                        <i class="<%= icon_class objective.enabling_factors %>"></i>
+                      </td>
+                      <td>
+                        <%= link_to objective_link_text(objective, :enabling_factors), stage3_project_objective_path(@project, objective, anchor: "factors-barriers"), target: "_self" %>
+                      </td>
+                    </tr>
+                    <tr title="You must complete the previous step">
+                      <td class="text-center td-w-10p">
+                        <i class="<%= icon_class objective.outcomes %>"></i>
+                      </td>
+                      <td>
+                        <%= link_to objective_link_text(objective, :outcomes), stage4_project_objective_path(@project, objective), target: "_self" %>
+                      </td>
+                    </tr>
+                    <tr title="You must complete the previous step">
+                      <td class="text-center td-w-10p">
+                        <i class="fa fa-lock"></i>
+                      </td>
+                      <td>
+                        <a href="#">(Coming soon) Define theory of change</a>
+                      </td>
+                    </tr>
+                    <tr title="You must complete the previous step">
+                      <td class="text-center td-w-10p">
+                        <i class="fa fa-lock"></i>
+                      </td>
+                      <td>
+                        <a href="#">(Coming soon) Develop messages</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
     <div role="tabpanel" class="tab-pane" id="dashboard">...</div>
     <div role="tabpanel" class="tab-pane" id="documents">
         <%= render "resources" %>
     </div>
   </div>
-
 </div>

@@ -36,6 +36,19 @@ class ProjectsController < ApplicationController
       @factors_size = @factors_size + o.enabling_factors.size
       @outcomes_size = @outcomes_size + o.outcomes.size
     end
+
+    if !@project.real_problem.blank?
+      @real_problem = @project.real_problem
+      if !@project.real_problem.try(:policy_problems).try(:blank?)
+        @policy_problems = @project.real_problem.policy_problems
+        if !@project.real_problem.try(:get_solutions).try(:blank?)
+          @solutions = @project.real_problem.get_solutions
+        end
+      end
+    end
+    
+    # @policy_problems = @project.real_problem.policy_problems || PolicyProblem.none
+    # @solutions = @project.real_problem.policy_problems.first.solutions || Solution.none
     respond_with(@project)
   end
 
