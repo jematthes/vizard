@@ -4,7 +4,7 @@ en:
   #
   projects:
     index:    # http://localhost:3000/projects/
-      projects: "Projects"
+      projects: "Policy Advisory & Advocacy Projects"
       new_project: "New Project"
       my_projects: "My projects"
       other_projects: "Other Advocacy projects"
