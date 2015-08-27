@@ -26,6 +26,10 @@ en:
       stages: "Stages"
       dashboard: "Dashboard"
       documents: "Documents"
+    public:     # http://localhost:3000/projects/1/public
+      projects: "Projects"
+      stages: "Stages"
+      documents: "Documents"
     #
     # Stage 1
     #
